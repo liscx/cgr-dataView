@@ -1,0 +1,168 @@
+/* ============================================================
+   采购人画像数据大屏 — 精致浅色设计系统
+   暖白底色 + 深靛蓝主色 + 精细阴影层次
+   灵感来源：Linear / Vercel / Notion 高级产品美学
+   ============================================================ */
+:root {
+  /* 底色 */
+  --bg: #f7f8fc;
+  --panel: #ffffff;
+  --panel-solid: #ffffff;
+  --panel-border: rgba(60, 70, 110, 0.09);
+  --panel-hover: #f3f4f9;
+
+  /* 主色 — 深靛蓝 */
+  --accent: #3b6fe8;
+  --accent-deep: #2553c7;
+  --accent-dim: rgba(59, 111, 232, 0.08);
+
+  /* 结构细线 — 由主色衍生的墨蓝调，不用中性灰 */
+  --rule: rgba(26, 43, 95, 0.09);
+
+  /* 辅助色 */
+  --teal: #0ea5ad;
+  --violet: #7c5cfc;
+  --emerald: #16a869;
+  --amber: #e8920b;
+  --rose: #e5445e;
+
+  /* 文本 */
+  --text: #111827;
+  --muted: #6b7280;
+  --faint: #9ca3af;
+
+  /* 阴影 — 精致多层 */
+  --shadow: 0 1px 3px rgba(20, 30, 70, 0.04), 0 4px 16px rgba(20, 30, 70, 0.06);
+  --shadow-pop: 0 2px 6px rgba(20, 30, 70, 0.04), 0 12px 32px rgba(20, 30, 70, 0.1);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  /* 字体 */
+  --font-num: 'Bahnschrift', 'SF Pro Display', 'Segoe UI', 'PingFang SC', sans-serif;
+  --font-body: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse 1200px 600px at 10% -10%, rgba(59, 111, 232, 0.06), transparent 55%),
+    radial-gradient(ellipse 800px 500px at 90% 110%, rgba(14, 165, 173, 0.05), transparent 55%),
+    radial-gradient(ellipse 600px 400px at 50% 50%, rgba(124, 92, 252, 0.025), transparent 60%);
+}
+
+/* 数字统一 DIN 风 */
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+/* 通用面板 — 纯白精致卡片 */
+.panel {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 20px;
+  transition: box-shadow var(--transition);
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.025em;
+}
+
+.panel-head h2::before {
+  content: '';
+  width: 3px;
+  height: 13px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+  border-radius: 2px;
+  flex: none;
+}
+
+.panel-head .note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 111, 232, 0.18);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 键盘可达性 */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
