@@ -20,9 +20,11 @@
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.5",
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^24.13.4",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/tsconfig": "^0.9.1",
+    "better-sqlite3": "^13.0.3",
     "npm-run-all2": "^9.0.3",
     "prettier": "3.9.6",
     "typescript": "~6.0.0",

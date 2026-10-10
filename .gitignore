@@ -37,3 +37,15 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# 运行时 SQLite 数据文件（由 better-sqlite3 在 data/ 生成，不进版本库）
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# 访问者日志（由 Vite 中间件运行时追加生成，含访问者 IP，不进版本库）
+src/assets/visitor_log_*.csv
+
+# npm 缓存
+.npm-cache/
