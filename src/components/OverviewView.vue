@@ -44,6 +44,25 @@ const selectedKeyCategory = ref<'潜力用户' | '沉默用户' | '快速增长'
 const selectedQuadrantFilter = ref<string | null>(null)
 const searchKeyword = ref('')
 
+// ============ 重点用户动态表格排序 ============
+type SortKey =
+  | 'amt3m'
+  | 'growthRate3m'
+  | 'avgCycleDays'
+  | 'inactiveDays'
+  | 'cycleDeviationRatio'
+const sortKey = ref<SortKey | null>(null)
+const sortDir = ref<'asc' | 'desc'>('desc')
+
+function toggleSort(key: SortKey) {
+  if (sortKey.value === key) {
+    sortDir.value = sortDir.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    sortKey.value = key
+    sortDir.value = 'desc' // 数值类指标默认从高到低
+  }
+}
+
 // ============ 核心视觉中心 1：“用户潜力 × 用户粘性” 二维分层散点图 ============
 const matrixOption = computed<echarts.EChartsOption>(() => {
   const buyerList = D.value.buyerRank
@@ -440,6 +459,13 @@ const keyUserList = computed<KeyUserItem[]>(() => {
     )
   }
 
+  // 排序（数值类字段，避免原地修改源数组）
+  if (sortKey.value) {
+    const key = sortKey.value
+    const factor = sortDir.value === 'asc' ? 1 : -1
+    list = [...list].sort((a, b) => ((a[key] as number) - (b[key] as number)) * factor)
+  }
+
   return list
 })
 
@@ -698,11 +724,41 @@ function toggleQuadrantFilter(quadrant: string) {
               <th>采购人</th>
               <th>所属企业</th>
               <th>部门归类</th>
-              <th>近3月金额</th>
-              <th>金额变化(3月)</th>
-              <th>历史周期</th>
-              <th>当前间隔</th>
-              <th>周期偏离</th>
+              <th
+                class="sortable"
+                :class="{ active: sortKey === 'amt3m' }"
+                @click="toggleSort('amt3m')"
+              >
+                近3月金额<span class="sort-ind">{{ sortKey === 'amt3m' ? (sortDir === 'asc' ? '▲' : '▼') : '↕' }}</span>
+              </th>
+              <th
+                class="sortable"
+                :class="{ active: sortKey === 'growthRate3m' }"
+                @click="toggleSort('growthRate3m')"
+              >
+                金额变化(3月)<span class="sort-ind">{{ sortKey === 'growthRate3m' ? (sortDir === 'asc' ? '▲' : '▼') : '↕' }}</span>
+              </th>
+              <th
+                class="sortable"
+                :class="{ active: sortKey === 'avgCycleDays' }"
+                @click="toggleSort('avgCycleDays')"
+              >
+                历史周期<span class="sort-ind">{{ sortKey === 'avgCycleDays' ? (sortDir === 'asc' ? '▲' : '▼') : '↕' }}</span>
+              </th>
+              <th
+                class="sortable"
+                :class="{ active: sortKey === 'inactiveDays' }"
+                @click="toggleSort('inactiveDays')"
+              >
+                当前间隔<span class="sort-ind">{{ sortKey === 'inactiveDays' ? (sortDir === 'asc' ? '▲' : '▼') : '↕' }}</span>
+              </th>
+              <th
+                class="sortable"
+                :class="{ active: sortKey === 'cycleDeviationRatio' }"
+                @click="toggleSort('cycleDeviationRatio')"
+              >
+                周期偏离<span class="sort-ind">{{ sortKey === 'cycleDeviationRatio' ? (sortDir === 'asc' ? '▲' : '▼') : '↕' }}</span>
+              </th>
               <th>用户状态</th>
               <th>四象限归类</th>
               <th>操作</th>
@@ -786,6 +842,7 @@ function toggleQuadrantFilter(quadrant: string) {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 16px;
+  order: 1; /* 始终最顶部 */
 }
 
 .metric-panel,
@@ -936,6 +993,7 @@ function toggleQuadrantFilter(quadrant: string) {
   display: grid;
   grid-template-columns: 62fr 19fr 19fr;
   gap: 16px;
+  order: 4; /* 原 Row 2（散点图 + 两张环形图）下移到底部 */
 }
 
 /* Row 3: 趋势图 60% + 品类偏好 40% */
@@ -943,6 +1001,7 @@ function toggleQuadrantFilter(quadrant: string) {
   display: grid;
   grid-template-columns: 60fr 40fr;
   gap: 16px;
+  order: 3; /* 保持中间 */
 }
 
 .matrix-panel,
@@ -1075,6 +1134,7 @@ function toggleQuadrantFilter(quadrant: string) {
 .key-user-section {
   display: flex;
   flex-direction: column;
+  order: 2; /* 原 Row 4（重点用户动态）上移到热力图/饼图之前 */
 }
 
 .key-head-left {
@@ -1144,7 +1204,7 @@ function toggleQuadrantFilter(quadrant: string) {
 .table-container {
   margin-top: 12px;
   overflow-x: auto;
-  max-height: 300px;
+  max-height: 440px; /* 表格已上移，给予更大可视区；仍内部滚动 */
   border-radius: 8px;
   border: 1px solid var(--panel-border);
 }
@@ -1152,18 +1212,54 @@ function toggleQuadrantFilter(quadrant: string) {
 .user-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 12.5px;
   text-align: left;
+}
+
+/* 数值列等宽对齐，避免排序后数字左右跳动 */
+.user-table .num {
+  font-variant-numeric: tabular-nums;
 }
 
 .user-table th {
   background: #f2f2f7;
   color: var(--muted);
   font-weight: 600;
-  padding: 9px 12px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  padding: 10px 12px;
   position: sticky;
   top: 0;
   z-index: 2;
+}
+
+/* 可排序表头：指针 + 悬停/激活高亮 + 升降指示 */
+.user-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.user-table th.sortable:hover {
+  color: #3b6fe8;
+  background: #eef2fd;
+}
+
+.user-table th.sortable.active {
+  color: #3b6fe8;
+  background: #eaf0fe;
+}
+
+.user-table th .sort-ind {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.user-table th.sortable.active .sort-ind {
+  opacity: 1;
 }
 
 .user-table td {
@@ -1183,6 +1279,7 @@ function toggleQuadrantFilter(quadrant: string) {
 
 .u-name {
   font-weight: 700;
+  font-size: 13px;
   color: #3b6fe8;
 }
 
