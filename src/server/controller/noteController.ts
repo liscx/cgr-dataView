@@ -46,8 +46,10 @@ export function createNoteController(db: DB) {
           const body = await readJson(req)
           const id = Number(body.id ?? '')
           const buyer = String(body.buyer ?? '')
+          const by = String(body.by ?? '')
           if (!id) return sendJson(res, 400, { ok: false, error: '缺少 id' })
-          removeNote(db, id)
+          const r = removeNote(db, id, by)
+          if (!r.ok) return sendJson(res, 200, { ok: false, error: r.reason })
           return sendJson(res, 200, { ok: true, notes: buyer ? refreshNotes(db, buyer) : [] })
         }
 

@@ -37,8 +37,16 @@ export function updateNote(buyer: string, id: number, note: string): Promise<Not
     .catch(() => [])
 }
 
-export function deleteNote(buyer: string, id: number): Promise<NoteRow[]> {
-  return sendJson<{ ok: boolean; notes: NoteRow[] }>('/api/buyer-notes', 'DELETE', { buyer, id })
-    .then((d) => (d.ok ? d.notes : []))
-    .catch(() => [])
+export interface DeleteNoteResult {
+  ok: boolean
+  notes: NoteRow[]
+  error?: string
+}
+
+export function deleteNote(buyer: string, id: number, by: string): Promise<DeleteNoteResult> {
+  return sendJson<DeleteNoteResult>('/api/buyer-notes', 'DELETE', { buyer, id, by }).catch(() => ({
+    ok: false,
+    notes: [],
+    error: '网络错误',
+  }))
 }

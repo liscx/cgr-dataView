@@ -28,6 +28,12 @@ export function updateNote(db: DB, id: number, note: string): boolean {
   return r.changes > 0
 }
 
+export function getNoteById(db: DB, id: number): NoteRow | undefined {
+  return db
+    .prepare('SELECT id, note, user, created_at, updated_at FROM buyer_notes WHERE id = ?')
+    .get(id) as NoteRow | undefined
+}
+
 export function deleteNote(db: DB, id: number): void {
   db.prepare('DELETE FROM buyer_notes WHERE id = ?').run(id)
 }
