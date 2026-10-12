@@ -14,6 +14,7 @@ import {
   valAxis,
 } from '../utils/chartTheme'
 import ChartBox from './ChartBox.vue'
+import HistoryGoodsTable from './HistoryGoodsTable.vue'
 
 // api 调用层（前端）：标签 + 备注（类型由 api 层统一导出）
 import type { TagRow } from '../api/tags'
@@ -36,18 +37,40 @@ async function loadTags() {
   userTags.value = await fetchTags(B.value.id)
 }
 
+// 回车也保存；中文输入法候选词确认（isComposing）时不触发
+function onTagKeydown(e: KeyboardEvent) {
+  if (e.key === 'Enter' && !e.isComposing) {
+    e.preventDefault()
+    addTag()
+  }
+}
+
 async function addTag() {
-  const name = newTag.value.trim()
-  if (!name || tagBusy.value) return
+  const raw = newTag.value.trim()
+  if (!raw || tagBusy.value) return
+  // 支持一次录入多个标签：按 逗号 / 顿号 / 分号 / 空格 / 换行 分隔
+  const names = raw.split(/[，,、;；\s]+/).map((s) => s.trim()).filter(Boolean)
+  if (!names.length) return
   tagBusy.value = true
   try {
-    userTags.value = await createTag(B.value.id, name, props.user)
+    let list = userTags.value
+    for (const name of names) {
+      list = await createTag(B.value.id, name, props.user)
+    }
+    userTags.value = list
     newTag.value = ''
   } catch {
     /* 静默失败 */
   } finally {
     tagBusy.value = false
   }
+}
+
+// hover 标签时展示「由谁添加、何时添加」
+function tagTitle(t: TagRow): string {
+  const who = t.tagged_by || '未知用户'
+  const when = t.created_at ? ` · ${t.created_at}` : ''
+  return `由 ${who} 添加${when}`
 }
 
 async function removeTag(tagId: number) {
@@ -106,6 +129,14 @@ function startNewNote() {
   editing.value = true
 }
 
+// 回车保存，Shift+回车换行；中文输入法候选词确认（isComposing）时不触发
+function onNoteKeydown(e: KeyboardEvent) {
+  if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+    e.preventDefault()
+    saveNote()
+  }
+}
+
 async function saveNote() {
   const text = draft.value.trim()
   if (!text || noteBusy.value) return
@@ -131,14 +162,16 @@ async function saveNote() {
 
 async function deleteNote(id: number) {
   if (!window.confirm('确定删除该备注节点？删除后不可恢复。')) return
-  try {
-    const list = await deleteNoteApi(B.value.id, id)
-    const wasActive = activeNoteId.value === id
-    notes.value = list
-    if (wasActive) activeNoteId.value = list[0]?.id ?? null
-  } catch {
-    /* 静默失败 */
+  // 带上当前用户，后端校验「只能删自己创建的」（展示不隔离，所有人可见）
+  const r = await deleteNoteApi(B.value.id, id, props.user)
+  if (!r.ok) {
+    window.alert(r.error || '删除失败')
+    return
   }
+  const wasActive = activeNoteId.value === id
+  notes.value = r.notes
+  if (wasActive) activeNoteId.value = r.notes[0]?.id ?? null
+  showHistory.value = false
 }
 
 function pickNote(id: number) {
@@ -175,11 +208,16 @@ const monthOption = computed<echarts.EChartsOption>(() => {
   const all = D.value.monthlyTrend.map((m) => m.label)
   const mine = new Map(B.value.months.map((m) => [m.label, m]))
   return {
-    grid: { left: 56, right: 52, top: 32, bottom: 26 },
+    grid: { left: 56, right: 52, top: 44, bottom: 26 },
     legend: {
       left: 'center',
-      top: 0,
-      itemGap: 24,
+      top: 4,
+      itemGap: 28,
+      icon: 'roundRect',
+      data: [
+        { name: '采购金额', itemStyle: { color: '#007AFF' } },
+        { name: '订单数', itemStyle: { color: '#30B0C7' } },
+      ],
       textStyle: { color: TEXT_COLOR, fontSize: 11 },
       itemWidth: 14,
       itemHeight: 9,
@@ -187,8 +225,10 @@ const monthOption = computed<echarts.EChartsOption>(() => {
     tooltip: {
       ...TOOLTIP,
       formatter: (params: unknown) => {
-        const list = params as { axisValueLabel?: string; value: number }[]
-        const label = list[0]?.axisValueLabel ?? ''
+        const list = params as { dataIndex?: number }[]
+        // 用 dataIndex 回查完整 label（x 轴显示值是切片后的 25-01，不能用 axisValueLabel 去查 mine）
+        const idx = list[0]?.dataIndex ?? -1
+        const label = idx >= 0 ? (all[idx] ?? '') : ''
         const row = mine.get(label)
         if (!row) return `<b>${label}</b><br/>当月无采购`
         return [`<b>${row.label}</b>`, `金额：¥${fmtAmount(row.amount)}`, `订单：${row.count} 单`].join('<br/>')
@@ -197,7 +237,12 @@ const monthOption = computed<echarts.EChartsOption>(() => {
     xAxis: catAxis({ data: all.map((x) => x.slice(2)), boundaryGap: true }),
     yAxis: [
       valAxis({ name: '万元', nameTextStyle: { color: TEXT_COLOR, fontSize: 10 } }),
-      valAxis({ name: '单', nameTextStyle: { color: TEXT_COLOR, fontSize: 10 }, splitLine: { show: false } }),
+      valAxis({
+        name: '单',
+        nameTextStyle: { color: TEXT_COLOR, fontSize: 10 },
+        splitLine: { show: false },
+        minInterval: 1,
+      }),
     ],
     series: [
       {
@@ -223,6 +268,53 @@ const monthOption = computed<echarts.EChartsOption>(() => {
         lineStyle: { color: '#30B0C7', width: 2 },
         itemStyle: { color: '#30B0C7' },
         data: all.map((m) => mine.get(m)?.count ?? 0),
+      },
+    ],
+  }
+})
+
+// ============ 常常采品类（饼图，按商品目录采购次数） ============
+const catOption = computed<echarts.EChartsOption>(() => {
+  const cats = (B.value.categories || []).map((c) => ({ name: c.name, value: c.count }))
+  const top = cats.slice(0, 8)
+  const rest = cats.slice(8)
+  const data = top.map((c) => ({ name: c.name, value: c.value }))
+  if (rest.length) {
+    data.push({ name: '其他', value: rest.reduce((s, c) => s + c.value, 0) })
+  }
+  return {
+    tooltip: { ...TOOLTIP, trigger: 'item', formatter: '{b}: {c} 次 ({d}%)' },
+    legend: {
+      orient: 'horizontal',
+      bottom: 0,
+      left: 'center',
+      itemWidth: 10,
+      itemHeight: 10,
+      itemGap: 12,
+      textStyle: { color: TEXT_COLOR, fontSize: 11 },
+    },
+    series: [
+      {
+        type: 'pie',
+        radius: ['40%', '62%'],
+        center: ['50%', '38%'],
+        avoidLabelOverlap: true,
+        itemStyle: { borderColor: '#fff', borderWidth: 2 },
+        // 默认（图示）即展示「类别名 次数 占比%」，引导线拉长一点离饼更远
+        label: {
+          show: true,
+          position: 'outside',
+          formatter: '{b} {c}次 {d}%',
+          color: '#374151',
+          fontSize: 11,
+        },
+        labelLine: { length: 16, length2: 18 },
+        // hover 只让环形扇区放大，图示（引导线引出的标签）保持常态、不做动效
+        emphasis: {
+          scale: true,
+          scaleSize: 10,
+        },
+        data,
       },
     ],
   }
@@ -349,12 +441,11 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 
           <!-- 用户自定义标签（SQLite 持久化） -->
           <div class="tags-row user-tags-row">
-            <span class="tags-label">标签</span>
             <span
               v-for="t in userTags"
               :key="t.id"
               class="user-tag"
-              :title="`由 ${t.tagged_by || '未知'} 添加`"
+              :title="tagTitle(t)"
             >
               {{ t.name }}
               <button class="tag-x" type="button" @click="removeTag(t.id)">×</button>
@@ -363,10 +454,10 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
               v-model="newTag"
               class="tag-input"
               type="text"
-              placeholder="+ 打标签"
-              maxlength="20"
+              placeholder="打标签"
               :disabled="tagBusy"
-              @keydown.enter.prevent="addTag"
+              @keydown="onTagKeydown"
+              @blur="addTag"
             />
           </div>
         </div>
@@ -420,7 +511,8 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
                 class="note-textarea"
                 rows="1"
                 maxlength="2000"
-                placeholder="输入备注内容…"
+                placeholder="输入备注内容…（回车保存 · Shift+回车换行）"
+                @keydown="onNoteKeydown"
                 @blur="saveNote"
               ></textarea>
             </div>
@@ -454,7 +546,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
                     </div>
                     <span class="hi-text" :title="n.note">{{ n.note }}</span>
                   </div>
-                  <button class="hi-del" type="button" title="删除节点" @click.stop="deleteNote(n.id)">
+                  <button v-if="n.user === props.user" class="hi-del" type="button" title="删除节点" @click.stop="deleteNote(n.id)">
                     ×
                   </button>
                 </div>
@@ -479,31 +571,54 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
       </Transition>
     </section>
 
-    <!-- 采购概况 4 指标卡 -->
-    <section class="overview-band">
-      <div class="p-kpi panel">
-        <span class="pk-label">累计采购金额</span>
-        <span class="pk-val num">¥{{ fmtAmount(B.amount) }}</span>
-        <span class="pk-sub">占全平台 {{ fmtPct(globalShare) }}</span>
+    <!-- 采购概况：单独一行，1×4 扁卡 -->
+    <section class="panel kpi-box">
+      <div class="panel-head">
+        <h2>采购概况</h2>
       </div>
-      <div class="p-kpi panel">
-        <span class="pk-label">近3个月采购额</span>
-        <span class="pk-val num">¥{{ fmtAmount(B.amt3m) }}</span>
-        <span class="pk-sub">环比变化 {{ B.growthRate3m > 0 ? '+' : '' }}{{ B.growthRate3m.toFixed(1) }}%</span>
-      </div>
-      <div class="p-kpi panel">
-        <span class="pk-label">平均采购周期</span>
-        <span class="pk-val num">{{ B.avgCycleDays }}<span class="pk-unit">天</span></span>
-        <span class="pk-sub">历史均值 (波动 ±{{ B.cycleStdDays }}天)</span>
-      </div>
-      <div class="p-kpi panel">
-        <span class="pk-label">累计采购订单</span>
-        <span class="pk-val num">{{ B.count }}<span class="pk-unit">单</span></span>
-        <span class="pk-sub">笔均 ¥{{ fmtAmount(B.avgAmount) }}</span>
+      <div class="kpi-grid">
+        <div class="kpi-cell">
+          <span class="pk-label">累计采购金额</span>
+          <span class="pk-val num">¥{{ fmtAmount(B.amount) }}</span>
+          <span class="pk-sub">占全平台 {{ fmtPct(globalShare) }}</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="pk-label">近3个月采购额</span>
+          <span class="pk-val num">¥{{ fmtAmount(B.amt3m) }}</span>
+          <span class="pk-sub">环比变化 {{ B.growthRate3m > 0 ? '+' : '' }}{{ B.growthRate3m.toFixed(1) }}%</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="pk-label">平均采购周期</span>
+          <span class="pk-val num">{{ B.avgCycleDays }}<span class="pk-unit">天</span></span>
+          <span class="pk-sub">历史均值 (波动 ±{{ B.cycleStdDays }}天)</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="pk-label">累计采购订单</span>
+          <span class="pk-val num">{{ B.count }}<span class="pk-unit">单</span></span>
+          <span class="pk-sub">笔均 ¥{{ fmtAmount(B.avgAmount) }}</span>
+        </div>
       </div>
     </section>
 
-    <!-- 图表网格 1：近12个月趋势 + 客单价区间分布 -->
+    <!-- 图表网格：历史采购商品(6fr) + 常常采品类(4fr) -->
+    <section class="grid-kpi">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>历史采购商品</h2>
+        </div>
+        <HistoryGoodsTable :items="B.goods" />
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>常常采品类</h2>
+          <span class="note">按商品目录采购次数</span>
+        </div>
+        <ChartBox :option="catOption" height="300px" />
+      </div>
+    </section>
+
+    <!-- 图表网格 2：个人月度采购趋势 + 单笔订单金额分布 -->
     <section class="grid-two">
       <div class="panel">
         <div class="panel-head">
@@ -519,37 +634,6 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
           <span class="note">按订单笔数</span>
         </div>
         <ChartBox :option="bandOption" height="210px" />
-      </div>
-    </section>
-
-    <!-- 图表网格 2：商品与供应商排行 -->
-    <section class="grid-two">
-      <div class="panel">
-        <div class="panel-head">
-          <h2>主要采购商品 TOP</h2>
-          <span class="note">按采购金额</span>
-        </div>
-        <ul class="rank-list">
-          <li v-for="(g, i) in B.goods" :key="g.name" class="rank-item">
-            <span class="r-num" :class="{ top: i < 3 }">{{ i + 1 }}</span>
-            <span class="r-name" :title="g.name">{{ g.name }}</span>
-            <span class="r-amt num">¥{{ fmtAmount(g.amount) }}</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head">
-          <h2>主要合作供应商 TOP</h2>
-          <span class="note">按采购金额</span>
-        </div>
-        <ul class="rank-list">
-          <li v-for="(s, i) in B.suppliers" :key="s.name" class="rank-item">
-            <span class="r-num" :class="{ top: i < 3 }">{{ i + 1 }}</span>
-            <span class="r-name" :title="s.name">{{ s.name }}</span>
-            <span class="r-amt num">¥{{ fmtAmount(s.amount) }}</span>
-          </li>
-        </ul>
       </div>
     </section>
   </div>
@@ -609,19 +693,19 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 }
 
 .rank-badge {
-  font-size: 11px;
+  font-size: 14px;
   background: rgba(0, 122, 255, 0.08);
   color: #007aff;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 6px;
   font-weight: 600;
 }
 
 .zone-badge {
-  font-size: 11px;
+  font-size: 14px;
   background: rgba(48, 176, 199, 0.1);
   color: #30B0C7;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 6px;
   font-weight: 600;
   max-width: 260px;
@@ -631,20 +715,20 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 }
 
 .q-tag {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .status-chip {
   border: 1px solid;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .company-row {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   display: flex;
   align-items: center;
@@ -664,8 +748,8 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 .ai-tag {
   background: #f2f2f7;
   color: #1d1d1f;
-  font-size: 11px;
-  padding: 2px 8px;
+  font-size: 14px;
+  padding: 3px 9px;
   border-radius: 6px;
 }
 
@@ -676,13 +760,6 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   margin-top: 2px;
 }
 
-.tags-label {
-  font-size: 11px;
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
 .user-tag {
   display: inline-flex;
   align-items: center;
@@ -690,8 +767,8 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   background: rgba(59, 111, 232, 0.08);
   border: 1px solid rgba(59, 111, 232, 0.22);
   color: var(--accent-deep);
-  font-size: 11px;
-  padding: 1px 4px 1px 8px;
+  font-size: 14px;
+  padding: 2px 5px 2px 10px;
   border-radius: 999px;
   font-weight: 500;
 }
@@ -700,7 +777,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   border: 0;
   background: transparent;
   color: var(--accent);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1;
   padding: 0 3px;
   cursor: pointer;
@@ -717,16 +794,16 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   border-radius: 999px;
   background: transparent;
   color: var(--accent-deep);
-  font-size: 11px;
-  padding: 1px 8px;
-  width: 76px;
+  font-size: 14px;
+  padding: 2px 9px;
+  width: 66px;
   outline: none;
   transition: border-color var(--transition), width var(--transition);
 }
 
 .tag-input:focus {
   border-color: var(--accent);
-  width: 110px;
+  width: 220px;
 }
 
 /* ===== 备注栏 ===== */
@@ -813,7 +890,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 }
 
 .stamp-time {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
@@ -932,7 +1009,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1;
   width: 22px;
   height: 22px;
@@ -987,7 +1064,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 .note-pop-enter-from,
 .note-pop-leave-to {
   opacity: 0;
-  transform: translateY(-8px) scale(0.96);
+  transform: translateY(-8px);
 }
 
 /* 编辑 / 查看 切换：淡入淡出 + 轻微位移，避免“凭空消失”的生硬感 */
@@ -1127,7 +1204,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 }
 
 .hi-text {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--text);
   white-space: pre-wrap; /* 保留换行并自动折行，长备注完整显示而非截断 */
@@ -1138,7 +1215,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 .history-empty {
   padding: 14px;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--faint);
 }
 
@@ -1167,7 +1244,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   border: 0;
   background: transparent;
   color: var(--faint);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1;
   width: 22px;
   height: 22px;
@@ -1204,7 +1281,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 }
 
 .s-label {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--muted);
 }
 
@@ -1219,37 +1296,40 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
 }
 
 .s-sub {
-  font-size: 10px;
+  font-size: 11.5px;
   color: var(--faint);
 }
 
-/* ===== 概况 4 指标栏 ===== */
-.overview-band {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.p-kpi {
-  padding: 14px 18px;
+/* ===== 概况 4 指标栏（已移入详情页四宫格，此处样式保留供 kpi-cell 复用） ===== */
+.kpi-cell {
+  padding: 6px 14px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+  gap: 2px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
+  border-radius: 10px;
+  min-height: 56px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(40, 80, 180, 0.06);
 }
 
 .pk-label {
   font-size: 12px;
   color: var(--muted);
+  line-height: 1.25;
 }
 
 .pk-val {
-  font-size: 26px;
+  font-size: 21px;
   font-weight: 700;
   color: #1d1d1f;
 }
 
 .pk-unit {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--muted);
   margin-left: 2px;
@@ -1265,6 +1345,29 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+/* 图表行：历史采购商品(6fr) + 常常采品类(4fr) */
+.grid-kpi {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 16px;
+}
+
+/* 采购概况：单独一行 1×4 扁卡 */
+.kpi-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 12px;
+  padding: 10px 14px 12px;
+  box-sizing: border-box;
 }
 
 .grid-three {
@@ -1286,7 +1389,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .r-num {
@@ -1298,7 +1401,7 @@ const zoneOption = computed<echarts.EChartsOption>(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
 }
 
