@@ -66,6 +66,17 @@ def month_label(x):
 buyer_orders['月'] = buyer_orders['日期'].apply(month_label)
 all_months = sorted(buyer_orders['月'].unique())
 
+# 行级明细（含 单价（元）/数量），用于商品/供应商的「件数」「单价」计算
+# 与底部品类分布共用，提前准备好并按下单采购人分组
+lines = df.copy()
+for c in ['订单号', '采购企业', '采购人', '订单创建时间']:
+    lines[c] = lines[c].ffill()
+lines['日期'] = pd.to_datetime(lines['订单创建时间'], errors='coerce')
+lines = lines[lines['采购人'].notna() & lines['日期'].notna()].copy()
+lines['line_amount'] = lines['单价（元）'] * lines['数量']
+lines['buyer_id'] = lines['采购企业'].astype(str) + '||' + lines['采购人'].astype(str)
+lines_groups = {bid: sub for bid, sub in lines.groupby('buyer_id')}
+
 dt_3m_start = max_dt - pd.Timedelta(days=90)
 dt_prev_3m_start = max_dt - pd.Timedelta(days=180)
 dt_12m_start = max_dt - pd.Timedelta(days=365)
@@ -242,8 +253,61 @@ for i, b in enumerate(b_list):
     zones = g.groupby('专区名称').agg(count=('订单号', 'count'), amount=('订单金额（元）', 'sum')).sort_values('amount', ascending=False)
     sup_types = g.groupby('供应商类型').agg(count=('订单号', 'count'), amount=('订单金额（元）', 'sum'))
     months = g.groupby('月').agg(count=('订单号', 'count'), amount=('订单金额（元）', 'sum'))
-    goods = g.groupby('商品名称').agg(count=('订单号', 'count'), amount=('订单金额（元）', 'sum')).sort_values('amount', ascending=False)
-    suppliers = g.groupby('供应商').agg(count=('订单号', 'count'), amount=('订单金额（元）', 'sum')).sort_values('amount', ascending=False)
+    # 商品 / 品类：行级明细计算 件数(sum 数量) 与 单价(加权均价 = 金额 / 数量)
+    lines_b = lines_groups.get(bid, lines.iloc[0:0])
+
+    def max_consecutive_months(month_list):
+        """计算月标签(YYYY-MM)中最长连续自然月跨度，用于标记「连续三月采购」"""
+        s = sorted(set(month_list))
+        if not s:
+            return 0
+        best = cur = 1
+        for i in range(1, len(s)):
+            y0, m0 = (int(x) for x in s[i - 1].split('-'))
+            y1, m1 = (int(x) for x in s[i].split('-'))
+            if (y1 * 12 + m1) - (y0 * 12 + m0) == 1:
+                cur += 1
+                best = max(best, cur)
+            else:
+                cur = 1
+        return best
+
+    prod = lines_b[lines_b['商品名称'].notna()]
+    # 逐笔订单明细：商品名称 -> [{orderNo, date, qty}]（按日期降序），供前端 hover 展示历史采购订单
+    order_detail: dict = {}
+    if len(prod):
+        goods = prod.groupby('商品名称').agg(
+            count=('订单号', 'nunique'),
+            amount=('line_amount', 'sum'),
+            qty=('数量', 'sum'),
+            months=('日期', lambda x: [d.strftime('%Y-%m') for d in x]),
+        ).sort_values('amount', ascending=False)
+        goods['unit'] = np.where(goods['qty'] > 0, goods['amount'] / goods['qty'], 0.0)
+        # 连续三个月（含）出现采购行为 → 标记 hot（前端红色字体）
+        goods['hot'] = goods['months'].apply(lambda ms: max_consecutive_months(ms) >= 3)
+        for name, grp in prod.groupby('商品名称'):
+            od = (
+                grp.groupby('订单号')
+                .agg(日期=('日期', 'max'), 数量=('数量', 'sum'))
+                .reset_index()
+                .sort_values('日期', ascending=False)
+            )
+            order_detail[name] = [
+                {'orderNo': str(o['订单号']), 'date': o['日期'].strftime('%Y-%m-%d'), 'qty': int(o['数量'])}
+                for _, o in od.iterrows()
+            ]
+    else:
+        goods = pd.DataFrame(columns=['count', 'amount', 'qty', 'unit', 'hot'])
+
+    # 常常采品类：按商品目录名称聚合采购次数（一次采购 = 一个订单号）
+    cat_b = lines_b[lines_b['商品目录名称'].notna()]
+    if len(cat_b):
+        categories = cat_b.groupby('商品目录名称').agg(
+            count=('订单号', 'nunique'),
+            amount=('line_amount', 'sum'),
+        ).sort_values('count', ascending=False)
+    else:
+        categories = pd.DataFrame(columns=['count', 'amount'])
 
     def band(a):
         if a < 1000: return '1千以下'
@@ -304,12 +368,14 @@ for i, b in enumerate(b_list):
             for k, v in bands.iterrows()
         ],
         'goods': [
-            {'name': str(k), 'count': int(v['count']), 'amount': round(float(v['amount']), 2)}
-            for k, v in goods.head(8).iterrows()
+            {'name': str(k), 'count': int(v['count']), 'amount': round(float(v['amount']), 2),
+             'qty': int(v['qty']), 'unit': round(float(v['unit']), 2), 'hot': bool(v['hot']),
+             'orders': order_detail.get(k, [])}
+            for k, v in goods.iterrows()
         ],
-        'suppliers': [
+        'categories': [
             {'name': str(k), 'count': int(v['count']), 'amount': round(float(v['amount']), 2)}
-            for k, v in suppliers.head(6).iterrows()
+            for k, v in categories.iterrows()
         ],
     }
 
@@ -409,12 +475,7 @@ zone_dist_list = [
 ]
 
 # 品类分布：按商品行明细聚合（续行订单号/时间 ffill 归属，行金额 = 单价 × 数量）
-lines = df.copy()
-for c in ['订单号', '采购企业', '采购人', '订单创建时间']:
-    lines[c] = lines[c].ffill()
-lines['日期'] = pd.to_datetime(lines['订单创建时间'], errors='coerce')
-lines = lines[lines['采购人'].notna() & lines['日期'].notna()].copy()
-lines['line_amount'] = lines['单价（元）'] * lines['数量']
+# lines / line_amount 已在上方 buyer 循环前统一准备
 cat_rows = lines.dropna(subset=['商品目录名称'])
 cat_dist = cat_rows.groupby('商品目录名称').agg(
     orders=('订单号', 'nunique'),

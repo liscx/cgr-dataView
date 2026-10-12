@@ -51,6 +51,21 @@ export interface GroupStat {
   name: string
   count: number
   amount: number
+  /** 件数（行级 数量 之和，仅商品/供应商维度有） */
+  qty?: number
+  /** 单价（行级 加权均价 = 金额 / 数量，仅商品/供应商维度有） */
+  unit?: number
+  /** 连续三个月（含）出现采购行为 → 前端红色字体标记 */
+  hot?: boolean
+  /** 逐笔采购订单明细（按订单号去重，按日期降序），hover 商品名展示历史采购订单 */
+  orders?: { orderNo: string; date: string; qty: number }[]
+}
+
+/** 常常采品类：按商品目录名称聚合的采购次数 */
+export interface CategoryStat {
+  name: string
+  count: number
+  amount: number
 }
 
 export interface BuyerDetail extends BuyerSummary {
@@ -59,7 +74,8 @@ export interface BuyerDetail extends BuyerSummary {
   months: { label: string; count: number; amount: number }[]
   bands: GroupStat[]
   goods: GroupStat[]
-  suppliers: GroupStat[]
+  /** 常常采品类：按商品目录名称聚合的采购次数分布 */
+  categories: CategoryStat[]
 }
 
 export interface BehaviorOverview {
@@ -74,6 +90,8 @@ export interface KeyUserItem {
   name: string
   company: string
   deptGroup: string
+  /** 专区名称（渲染时从 buyers 明细的 zones 派生，可多个，以 、 连接） */
+  zone?: string
   amount: number
   amt3m: number
   growthRate3m: number
@@ -111,9 +129,6 @@ export interface DashboardData {
   categoryCoverage: number
   companyRank: { name: string; orders: number; amount: number; buyers: number }[]
   supplierTypeDist: { name: string; orders: number; amount: number; buyers: number }[]
-  keyUserGroups: Record<
-    '潜力用户' | '沉默用户' | '快速增长' | '采购下降' | '近期回流',
-    KeyUserItem[]
-  >
+  keyUserGroups: Record<string, KeyUserItem[]>
   buyers: Record<string, BuyerDetail>
 }
