@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import * as echarts from 'echarts'
 
-import type { DashboardData, KeyUserItem } from '../types'
+import type { BuyerDetail, DashboardData, KeyUserItem } from '../types'
 import { fmtAmount, toWan } from '../utils/format'
 import {
   AXIS_LINE,
@@ -38,9 +38,16 @@ const splitRows = computed(() => {
 // ============ 交互状态控制 ============
 const trendMetric = ref<'amount' | 'buyers' | 'orders'>('amount')
 const trendRange = ref<'3m' | '6m' | '12m'>('12m')
-const selectedKeyCategory = ref<'潜力用户' | '沉默用户' | '快速增长' | '采购下降' | '近期回流'>(
-  '潜力用户',
-)
+const selectedKeyCategory = ref<string>('全部')
+
+// 全部重点用户去重后的总数（用于「全部」分类的徽标）
+const allKeyUserCount = computed(() => {
+  const seen = new Set<string>()
+  for (const cat of Object.keys(D.value.keyUserGroups)) {
+    for (const u of D.value.keyUserGroups[cat] ?? []) seen.add(u.id)
+  }
+  return seen.size
+})
 const selectedQuadrantFilter = ref<string | null>(null)
 const searchKeyword = ref('')
 
@@ -440,22 +447,43 @@ const categoryOption = computed<echarts.EChartsOption>(() => {
 })
 
 // ============ 重点用户表格筛选 ============
+// 专区名称从 buyers 明细派生（避免改动大体积静态数据）
+const buyersById = computed(() => D.value.buyers || {})
+function zoneNamesOf(id: string): string[] {
+  return (buyersById.value[id]?.zones || []).map((z) => z.name)
+}
+
 const keyUserList = computed<KeyUserItem[]>(() => {
-  let list = D.value.keyUserGroups[selectedKeyCategory.value] || []
+  let list: KeyUserItem[]
+  if (selectedKeyCategory.value === '全部') {
+    // 合并所有分类并按下单采购人去重
+    const seen = new Set<string>()
+    list = []
+    for (const cat of Object.keys(D.value.keyUserGroups)) {
+      for (const u of D.value.keyUserGroups[cat] ?? []) {
+        if (!seen.has(u.id)) {
+          seen.add(u.id)
+          list.push(u)
+        }
+      }
+    }
+  } else {
+    list = D.value.keyUserGroups[selectedKeyCategory.value] || []
+  }
 
   // 象限过滤
   if (selectedQuadrantFilter.value) {
     list = list.filter((u) => u.quadrant === selectedQuadrantFilter.value)
   }
 
-  // 关键词过滤
+  // 关键词过滤（采购人 / 企业 / 专区）
   if (searchKeyword.value.trim()) {
     const kw = searchKeyword.value.trim().toLowerCase()
     list = list.filter(
       (u) =>
         u.name.toLowerCase().includes(kw) ||
         u.company.toLowerCase().includes(kw) ||
-        u.deptGroup.toLowerCase().includes(kw),
+        zoneNamesOf(u.id).some((z) => z.toLowerCase().includes(kw)),
     )
   }
 
@@ -466,7 +494,8 @@ const keyUserList = computed<KeyUserItem[]>(() => {
     list = [...list].sort((a, b) => ((a[key] as number) - (b[key] as number)) * factor)
   }
 
-  return list
+  // 附加专区名称（从 buyers 明细派生）
+  return list.map((u) => ({ ...u, zone: zoneNamesOf(u.id).join('、') || '—' }))
 })
 
 function toggleQuadrantFilter(quadrant: string) {
@@ -475,6 +504,100 @@ function toggleQuadrantFilter(quadrant: string) {
   } else {
     selectedQuadrantFilter.value = quadrant
   }
+}
+
+// ============ 核心指标：四类用户类型明细弹窗 + 导出 Excel ============
+const userTypeModal = ref<{ name: string; cap: string; list: BuyerDetail[] } | null>(null)
+
+function zoneOf(id: string): string {
+  const names = zoneNamesOf(id)
+  return names.join('、') || '—'
+}
+
+// 按核心指标面板四类用户的口径筛选采购人（口径与 caps 文案一致）
+function buyersOfType(type: string): BuyerDetail[] {
+  const all = D.value.buyerRank
+  switch (type) {
+    case '活跃采购人': // 近30天内有有效采购行为
+      return all.filter((b) => (b.inactiveDays ?? 9999) <= 30)
+    case '高潜力用户': // 潜力分 ≥ 50
+      return all.filter((b) => b.potentialScore >= 50)
+    case '高粘性用户': // 粘性分 ≥ 50
+      return all.filter((b) => b.stickinessScore >= 50)
+    case '沉默用户': // 偏离历史周期 > 2.0x
+      return all.filter((b) => b.cycleDeviationRatio > 2.0)
+    default:
+      return []
+  }
+}
+
+function openUserType(r: { name: string; cap: string }) {
+  userTypeModal.value = { name: r.name, cap: r.cap, list: buyersOfType(r.name) }
+}
+
+function closeUserTypeModal() {
+  userTypeModal.value = null
+}
+
+// 导出为 Excel 兼容的 CSV（带 UTF-8 BOM，中文不乱码，双击即用 Excel 打开）
+function exportUserTypeExcel() {
+  const m = userTypeModal.value
+  if (!m) return
+  const headers = [
+    '采购人', '所属企业', '用户状态', '四象限归类', '潜力分', '粘性分',
+    '近3月金额', '历史周期(天)', '当前间隔(天)', '周期偏离', '所属专区',
+  ]
+  const rows = m.list.map((b) => [
+    b.name, b.company, b.status, b.quadrant, b.potentialScore, b.stickinessScore,
+    b.amt3m, b.avgCycleDays, b.inactiveDays, b.cycleDeviationRatio, zoneOf(b.id),
+  ])
+  const lines = [headers, ...rows].map((row) => row.map(csvCell).join(','))
+  const csv = '﻿' + lines.join('\r\n')
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
+  downloadBlob(blob, `${m.name}_采购人清单_${dateStamp()}.csv`)
+}
+
+// 导出「重点用户动态」当前展示的列表（含筛选/排序/搜索结果）
+function exportKeyUsers() {
+  const list = keyUserList.value
+  if (!list.length) return
+  const headers = [
+    '采购人', '所属企业', '专区名称', '近3月金额', '金额变化(3月)%',
+    '历史周期(天)', '当前间隔(天)', '周期偏离(x)', '用户状态', '四象限归类',
+  ]
+  const rows = list.map((u) => [
+    u.name, u.company, u.zone,
+    u.amt3m, u.growthRate3m, u.avgCycleDays, u.inactiveDays, u.cycleDeviationRatio,
+    u.status, u.quadrant,
+  ])
+  const lines = [headers, ...rows].map((row) => row.map(csvCell).join(','))
+  const csv = '﻿' + lines.join('\r\n')
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
+  const label = selectedKeyCategory.value === '全部' ? '全部重点用户' : selectedKeyCategory.value
+  downloadBlob(blob, `${label}_重点用户清单_${dateStamp()}.csv`)
+}
+
+function csvCell(v: unknown): string {
+  const s = v == null ? '' : String(v)
+  if (/[",\r\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"'
+  return s
+}
+
+function dateStamp(): string {
+  const d = new Date()
+  const p = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}`
+}
+
+function downloadBlob(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
+  URL.revokeObjectURL(url)
 }
 </script>
 
@@ -497,9 +620,10 @@ function toggleQuadrantFilter(quadrant: string) {
           />
           <div class="split-rows">
             <div v-for="r in splitRows" :key="r.name" class="split-row">
-              <span class="sr-label">
+              <span class="sr-label" @click="openUserType(r)" title="点击查看该类型全部采购人">
                 <span class="sr-name">{{ r.name }}</span>
                 <span class="sr-cap">{{ r.cap }}</span>
+                <span class="sr-view">查看明细 ›</span>
               </span>
               <span class="sr-count num">{{ r.value }}</span>
               <span class="sr-bar"
@@ -693,7 +817,7 @@ function toggleQuadrantFilter(quadrant: string) {
           <h2>重点用户动态</h2>
           <div class="category-tabs">
             <button
-              v-for="cat in ['潜力用户', '沉默用户', '快速增长', '采购下降', '近期回流'] as const"
+              v-for="cat in ['全部', '潜力用户', '沉默用户', '快速增长', '采购下降', '近期回流'] as const"
               :key="cat"
               type="button"
               class="cat-tab"
@@ -701,16 +825,26 @@ function toggleQuadrantFilter(quadrant: string) {
               @click="selectedKeyCategory = cat"
             >
               {{ cat }}
-              <span class="tab-badge">{{ D.keyUserGroups[cat]?.length || 0 }}</span>
+              <span class="tab-badge">{{
+                cat === '全部' ? allKeyUserCount : (D.keyUserGroups[cat]?.length || 0)
+              }}</span>
             </button>
           </div>
         </div>
 
         <div class="key-head-right">
+          <button
+            class="export-btn"
+            type="button"
+            :disabled="keyUserList.length === 0"
+            @click="exportKeyUsers"
+          >
+            导出 Excel
+          </button>
           <input
             v-model="searchKeyword"
             type="text"
-            placeholder="搜索采购人 / 企业..."
+            placeholder="搜索采购人 / 企业 / 专区..."
             class="search-input"
           />
         </div>
@@ -723,7 +857,7 @@ function toggleQuadrantFilter(quadrant: string) {
             <tr>
               <th>采购人</th>
               <th>所属企业</th>
-              <th>部门归类</th>
+              <th>专区名称</th>
               <th
                 class="sortable"
                 :class="{ active: sortKey === 'amt3m' }"
@@ -775,9 +909,7 @@ function toggleQuadrantFilter(quadrant: string) {
                 <span class="u-name">{{ u.name }}</span>
               </td>
               <td class="u-company" :title="u.company">{{ u.company }}</td>
-              <td>
-                <span class="dept-chip">{{ u.deptGroup }}</span>
-              </td>
+              <td class="u-zone" :title="u.zone">{{ u.zone }}</td>
               <td class="num font-bold">¥{{ fmtAmount(u.amt3m) }}</td>
               <td>
                 <span
@@ -828,6 +960,74 @@ function toggleQuadrantFilter(quadrant: string) {
       </div>
     </section>
   </div>
+
+  <!-- 四类用户类型明细弹窗 -->
+  <Teleport to="body">
+    <div v-if="userTypeModal" class="ut-mask" @click.self="closeUserTypeModal">
+      <div class="ut-dialog">
+        <div class="ut-head">
+          <div class="ut-title-wrap">
+            <h3 class="ut-title">{{ userTypeModal.name }} · 采购人清单</h3>
+            <span class="ut-cap">{{ userTypeModal.cap }}</span>
+          </div>
+          <div class="ut-actions">
+            <button class="ut-export" type="button" @click="exportUserTypeExcel">
+              导出 Excel
+            </button>
+            <button class="ut-close" type="button" @click="closeUserTypeModal">✕</button>
+          </div>
+        </div>
+        <div class="ut-count">共 {{ userTypeModal.list.length }} 位采购人</div>
+        <div class="ut-table-wrap">
+          <table class="ut-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>采购人</th>
+                <th>所属企业</th>
+                <th>用户状态</th>
+                <th>四象限归类</th>
+                <th>潜力分</th>
+                <th>粘性分</th>
+                <th>近3月金额</th>
+                <th>历史周期(天)</th>
+                <th>当前间隔(天)</th>
+                <th>周期偏离</th>
+                <th>所属专区</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(b, i) in userTypeModal.list" :key="b.id">
+                <td class="ut-idx num">{{ i + 1 }}</td>
+                <td class="ut-name">{{ b.name }}</td>
+                <td class="ut-company" :title="b.company">{{ b.company }}</td>
+                <td>
+                  <span class="ut-status" :class="b.status">{{ b.status }}</span>
+                </td>
+                <td>
+                  <span class="ut-quad" :style="{ color: QUADRANT_COLORS[b.quadrant] || '#6E6E73' }">{{ b.quadrant }}</span>
+                </td>
+                <td class="num">{{ b.potentialScore }}</td>
+                <td class="num">{{ b.stickinessScore }}</td>
+                <td class="num">¥{{ fmtAmount(b.amt3m) }}</td>
+                <td class="num">{{ b.avgCycleDays }}</td>
+                <td class="num">{{ b.inactiveDays }}</td>
+                <td class="num">{{ b.cycleDeviationRatio }}x</td>
+                <td class="ut-zone" :title="zoneOf(b.id)">{{ zoneOf(b.id) }}</td>
+                <td>
+                  <button class="action-btn" type="button" @click="emit('select', b.id)">查看画像 →</button>
+                </td>
+              </tr>
+              <tr v-if="userTypeModal.list.length === 0">
+                <td colspan="13" class="empty-td">暂无符合条件的采购人</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <style scoped>
@@ -884,6 +1084,20 @@ function toggleQuadrantFilter(quadrant: string) {
   align-items: baseline;
   gap: 8px;
   min-width: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  transition: background var(--transition);
+}
+
+.sr-label:hover {
+  background: rgba(59, 111, 232, 0.08);
+}
+
+.sr-label:hover .sr-view {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sr-name {
@@ -891,6 +1105,16 @@ function toggleQuadrantFilter(quadrant: string) {
   font-weight: 600;
   color: var(--text);
   white-space: nowrap;
+}
+
+.sr-view {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--transition), transform var(--transition);
 }
 
 .sr-cap {
@@ -1143,6 +1367,12 @@ function toggleQuadrantFilter(quadrant: string) {
   gap: 18px;
 }
 
+.key-head-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .category-tabs {
   display: flex;
   gap: 6px;
@@ -1199,6 +1429,28 @@ function toggleQuadrantFilter(quadrant: string) {
   border-color: #3b6fe8;
   background: #ffffff;
   box-shadow: 0 0 0 3px rgba(59, 111, 232, 0.1);
+}
+
+.export-btn {
+  border: 1px solid #3b6fe8;
+  background: #3b6fe8;
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), opacity var(--transition);
+  white-space: nowrap;
+}
+
+.export-btn:hover {
+  background: #2f5acc;
+}
+
+.export-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .table-container {
@@ -1291,12 +1543,12 @@ function toggleQuadrantFilter(quadrant: string) {
   color: var(--muted);
 }
 
-.dept-chip {
-  background: #f2f2f7;
-  color: var(--muted);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+.u-zone {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
 }
 
 .font-bold {
@@ -1361,5 +1613,236 @@ function toggleQuadrantFilter(quadrant: string) {
   text-align: center;
   padding: 24px;
   color: var(--muted);
+}
+
+/* ===== 四类用户类型明细弹窗 ===== */
+.ut-mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 32px;
+}
+
+.ut-dialog {
+  width: min(1100px, 92vw);
+  max-height: 86vh;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.28);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ut-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.ut-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ut-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.ut-cap {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.ut-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ut-export {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: filter var(--transition);
+}
+
+.ut-export:hover {
+  filter: brightness(1.06);
+}
+
+.ut-close {
+  border: 0;
+  background: #f2f2f7;
+  color: var(--muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.ut-close:hover {
+  background: #e5e5ea;
+}
+
+.ut-count {
+  padding: 8px 22px 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.ut-table-wrap {
+  overflow: auto;
+  /* 横向 padding 会让 sticky 右侧留出缝隙、下层文字透出，故去掉；
+     左右留白改由表格首尾单元格的 padding 提供 */
+  padding: 0 0 16px;
+}
+
+/* 清单弹窗滚动条：全局默认仅 5px 且滑块极淡，这里加粗加深，便于看清和拖拽 */
+.ut-table-wrap::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.ut-table-wrap::-webkit-scrollbar-track {
+  background: #f1f2f5;
+  border-radius: 6px;
+}
+
+.ut-table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(59, 111, 232, 0.35);
+  border-radius: 6px;
+}
+
+.ut-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 111, 232, 0.55);
+}
+
+.ut-table {
+  width: 100%;
+  /* 用 separate 而非 collapse：折叠边框下 sticky 单元格的边框不跟随移动，会漏缝 */
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+/* 首尾单元格补回左右留白（容器已去掉横向 padding） */
+.ut-table thead th:first-child,
+.ut-table tbody td:first-child {
+  padding-left: 14px;
+}
+
+.ut-table thead th:last-child,
+.ut-table tbody td:last-child:not(.empty-td) {
+  padding-right: 14px;
+}
+
+.ut-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f7f8fa;
+  color: var(--muted);
+  font-weight: 600;
+  text-align: left;
+  padding: 9px 10px;
+  border-bottom: 1px solid #eef0f4;
+  box-shadow: 0 1px 0 #eef0f4;
+  z-index: 2;
+}
+
+.ut-table tbody td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f3f4f6;
+  color: var(--text);
+}
+
+.ut-table tbody tr:hover {
+  background: #f7f9ff;
+}
+
+/* 操作列固定在右侧：横向滚动时始终可见（sticky right），带左侧分隔线 */
+.ut-table thead th:last-child {
+  right: 0;
+  z-index: 4;
+  background: #f7f8fa;
+  box-shadow: -1px 0 0 #eef0f4, 0 1px 0 #eef0f4;
+}
+
+.ut-table tbody td:last-child:not(.empty-td) {
+  position: sticky;
+  right: 0;
+  z-index: 3;
+  background: #fff;
+  box-shadow: -1px 0 0 #eef0f4;
+}
+
+.ut-table tbody tr:hover td:last-child:not(.empty-td) {
+  background: #f7f9ff;
+}
+
+.ut-idx {
+  color: var(--faint);
+  text-align: right;
+  width: 40px;
+}
+
+.ut-name {
+  font-weight: 600;
+}
+
+.ut-company,
+.ut-zone {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ut-status {
+  font-weight: 600;
+}
+.ut-status.活跃 { color: #007aff; }
+.ut-status.正常 { color: #30b0c7; }
+.ut-status.低活跃 { color: #f0a020; }
+.ut-status.沉默 { color: #ff3b30; }
+.ut-status.回流 { color: #8e5bef; }
+
+.ut-quad {
+  font-weight: 600;
+}
+
+.ut-table .action-btn {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.ut-table .action-btn:hover {
+  text-decoration: underline;
 }
 </style>
