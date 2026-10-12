@@ -422,7 +422,6 @@ onUnmounted(() => {
       <!-- 顶部题头 -->
       <header v-if="dashboardReady" class="masthead">
         <div class="mast-left">
-          <button v-if="view === 'profile'" class="back-btn" type="button" @click="backToOverview">返回总览</button>
           <div
             class="seal"
             role="button"
@@ -432,10 +431,17 @@ onUnmounted(() => {
             @keydown.enter.prevent="onLogoClick"
             @keydown.space.prevent="onLogoClick"
           >采</div>
-          <div>
+          <div class="mast-title">
             <h1>采购人画像数据大屏</h1>
             <p class="sub">阳光优采 · 累计成交数据 · 数据截至 {{ D.dataEndDate }}</p>
           </div>
+          <button v-if="view === 'profile'" class="back-btn" type="button" @click="backToOverview">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            返回总览
+          </button>
         </div>
         <div class="mast-right">
           <span class="mode-chip" :class="{ profile: view === 'profile' }">
@@ -727,16 +733,30 @@ onUnmounted(() => {
 }
 
 .back-btn {
-  border: 1px solid rgba(0, 122, 255, 0.35);
-  background: transparent;
-  color: var(--accent);
-  font-size: 12px;
-  padding: 3px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-solid);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
   border-radius: 999px;
-  transition: background var(--transition);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+}
+
+.back-btn svg {
+  width: 15px;
+  height: 15px;
 }
 
 .back-btn:hover {
+  color: var(--accent);
+  border-color: rgba(0, 122, 255, 0.4);
   background: var(--accent-dim);
 }
 
