@@ -16,8 +16,9 @@ import {
 } from '../utils/chartTheme'
 import ChartBox from './ChartBox.vue'
 import KpiCard from './KpiCard.vue'
+import FrequentGoodsHint from './FrequentGoodsHint.vue'
 
-const props = defineProps<{ data: DashboardData }>()
+const props = defineProps<{ data: DashboardData; user?: string }>()
 const emit = defineEmits<{ (e: 'select', id: string): void }>()
 
 const D = computed(() => props.data)
@@ -761,7 +762,7 @@ function downloadBlob(blob: Blob, filename: string) {
           <div class="panel-head">
             <div>
               <h2>常采商品提示</h2>
-              <span class="note">内容待补充</span>
+              <span class="note">商品采购预警 · 稳定采购商品 · 已处理</span>
             </div>
             <div class="card-tab-switcher">
               <button
@@ -776,9 +777,7 @@ function downloadBlob(blob: Blob, filename: string) {
               >分层图</button>
             </div>
           </div>
-          <div class="hint-body">
-            <p class="hint-placeholder">卡片内容待补充</p>
-          </div>
+          <FrequentGoodsHint :data="D" :user="user || 'anonymous'" />
         </article>
       </div>
 
@@ -1329,7 +1328,7 @@ function downloadBlob(blob: Blob, filename: string) {
 /* 下层卡片内部不响应事件，点击整卡即翻到上层 */
 .panel-card.is-back .panel-head,
 .panel-card.is-back .chart,
-.panel-card.is-back .hint-body {
+.panel-card.is-back .frequent-hint {
   pointer-events: none;
 }
 
@@ -1361,20 +1360,6 @@ function downloadBlob(blob: Blob, filename: string) {
   border-color: rgba(0, 122, 255, 0.4);
   color: var(--accent);
   font-weight: 600;
-}
-
-/* 常采商品提示卡内容区（内容待补充） */
-.hint-body {
-  flex: 1 1 0;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hint-placeholder {
-  color: var(--faint);
-  font-size: 14px;
 }
 
 .matrix-panel,

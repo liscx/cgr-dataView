@@ -462,7 +462,7 @@ onUnmounted(() => {
 
       <!-- 总览 / 个人档案（登录成功后才渲染） -->
       <template v-if="dashboardReady">
-        <OverviewView v-if="view === 'overview'" :data="D" @select="openBuyer" />
+        <OverviewView v-if="view === 'overview'" :data="D" :user="currentUser" @select="openBuyer" />
         <BuyerProfileView v-else :data="D" :buyer="activeBuyer!" :user="currentUser" @back="backToOverview" />
       </template>
 

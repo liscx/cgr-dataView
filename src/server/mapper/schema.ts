@@ -1,10 +1,11 @@
 import type { DB } from './connection'
 
-// mapper / schema —— 建表（幂等）。四张表：
+// mapper / schema —— 建表（幂等）。五张表：
 //  - users        账号表（密码 salt + scrypt 哈希，绝不明文）
 //  - tags         标签字典（标签名唯一，供复用）
 //  - buyer_tags   采购人 ⇄ 标签 多对多关联
 //  - buyer_notes  采购人备注节点（节点型时间戳历史）
+//  - handled_hints 常采商品提示「已处理」记录（行首空心圆点击后挪入）
 export function initSchema(db: DB): void {
   db.exec(`
     CREATE TABLE IF NOT EXISTS users (
@@ -36,6 +37,17 @@ export function initSchema(db: DB): void {
       user       TEXT,
       created_at TEXT DEFAULT (datetime('now', 'localtime')),
       updated_at TEXT DEFAULT (datetime('now', 'localtime'))
+    );
+
+    CREATE TABLE IF NOT EXISTS handled_hints (
+      id         INTEGER PRIMARY KEY AUTOINCREMENT,
+      buyer_id   TEXT NOT NULL,
+      buyer_name TEXT NOT NULL,
+      good_name  TEXT NOT NULL,
+      kind       TEXT NOT NULL,
+      handled_by TEXT,
+      created_at TEXT DEFAULT (datetime('now', 'localtime')),
+      UNIQUE (buyer_id, good_name, kind)
     );
   `)
 }

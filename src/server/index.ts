@@ -6,6 +6,7 @@ import { seedAdmin } from './service/userService'
 import { createAuthController } from './controller/authController'
 import { createTagController } from './controller/tagController'
 import { createNoteController } from './controller/noteController'
+import { createHintController } from './controller/hintController'
 import { createVisitorController } from './controller/visitorController'
 
 // 后端入口：组装 entity / mapper / service / controller 四层。
@@ -18,12 +19,14 @@ export function createDataApi(): Plugin {
   const auth = createAuthController(db)
   const tag = createTagController(db)
   const note = createNoteController(db)
+  const hint = createHintController(db)
   const visitor = createVisitorController()
 
   const bindAll = (server: ViteDevServer) => {
     auth.bindAuthRoutes(server)
     tag.bindTagRoutes(server)
     note.bindNoteRoutes(server)
+    hint.bindHintRoutes(server)
     visitor.bindVisitorRoutes(server)
   }
 
