@@ -167,6 +167,8 @@ watch(authed, val => {
     unbindActivity()
     password.value = ''
     activeBuyerId.value = null
+    // 一并清掉 URL 上的 ?buyer=，避免重新登录后再刷新又被深链带回详情页
+    history.replaceState({ buyer: null }, '', window.location.pathname)
     sessionStorage.removeItem('cgr_user')
   }
 })
@@ -285,7 +287,9 @@ onMounted(() => {
   // 初始化浏览器历史基线：根态为总览；若是深链画像则再压入一条，
   // 保证后续“返回”能落到总览而非直接离站。
   history.replaceState({ buyer: null }, '', window.location.pathname)
-  if (urlBuyer && D.buyers[urlBuyer]) {
+  // 深链直达仅在「已恢复登录会话」时生效（刷新后仍停留在原画像页）；
+  // 冷启动登录成功后一律进入总览首页，不会直接落到采购人详情页。
+  if (authed.value && urlBuyer && D.buyers[urlBuyer]) {
     activeBuyerId.value = urlBuyer
     history.pushState({ buyer: urlBuyer }, '', `?buyer=${encodeURIComponent(urlBuyer)}`)
   }
@@ -467,7 +471,7 @@ onUnmounted(() => {
           <span>数据源 {{ D.source }} · 生成于 {{ D.generatedAt }} · 采购人身份按「企业 + 姓名」识别</span>
         </div>
         <div class="colophon-line rules">
-          <span><b>采购人潜力计算规则：</b>近12个月金额 (30%) + 近3个月金额 (25%) + 采购频次 (20%) + 近3个月金额增长率 (15%) + 品类丰富度 (10%)</span>
+          <span><b>采购人潜力计算规则：</b>近12个月金额 (33.3%) + 近3个月金额 (27.8%) + 采购频次 (22.2%) + 近3个月金额增长率 (16.7%)</span>
           <span class="sep">|</span>
           <span><b>用户粘性计算规则：</b>采购年限 (20%) + 月均频次 (25%) + 周期稳定性 (25%) + 历史周期偏离度扣分 (30%)</span>
         </div>

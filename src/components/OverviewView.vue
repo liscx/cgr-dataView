@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import * as echarts from 'echarts'
+import { gsap } from 'gsap'
 
 import type { BuyerDetail, DashboardData, KeyUserItem } from '../types'
 import { fmtAmount, toWan } from '../utils/format'
@@ -48,7 +49,6 @@ const allKeyUserCount = computed(() => {
   }
   return seen.size
 })
-const selectedQuadrantFilter = ref<string | null>(null)
 const searchKeyword = ref('')
 
 // ============ 重点用户动态表格排序 ============
@@ -71,12 +71,28 @@ function toggleSort(key: SortKey) {
 }
 
 // ============ 核心视觉中心 1：“用户潜力 × 用户粘性” 二维分层散点图 ============
+// 四象限系列名（同时作为图表原生图例的文案）
+const QUADRANT_LABELS: Record<string, string> = {
+  核心采购用户: '核心采购用户 (高潜力 / 高粘性)',
+  潜力待激活: '潜力待激活 (高潜力 / 低粘性)',
+  稳定型用户: '稳定型用户 (低潜力 / 高粘性)',
+  普通用户: '普通用户 (低潜力 / 低粘性)',
+}
+
 const matrixOption = computed<echarts.EChartsOption>(() => {
   const buyerList = D.value.buyerRank
-  const seriesData = buyerList.map((b) => {
+  // 按四象限拆成 4 个 series，这样图表自带图例即可按象限显隐；
+  // 图例只控制系列显隐，不再与下方表格联动。
+  const groups: Record<string, Record<string, unknown>[]> = {
+    核心采购用户: [],
+    潜力待激活: [],
+    稳定型用户: [],
+    普通用户: [],
+  }
+  buyerList.forEach((b) => {
     // 散点半径按采购金额开方映射 (8px ~ 26px)
     const size = Math.max(8, Math.min(26, Math.sqrt(b.amount / 1000) * 1.6 + 6))
-    return {
+    groups[b.quadrant]?.push({
       name: b.name,
       value: [
         b.stickinessScore,
@@ -93,11 +109,77 @@ const matrixOption = computed<echarts.EChartsOption>(() => {
         shadowBlur: 8,
         shadowColor: 'rgba(0, 0, 0, 0.12)',
       },
+    })
+  })
+
+  const series = Object.keys(groups).map((quad, idx) => {
+    const s: Record<string, unknown> = {
+      name: QUADRANT_LABELS[quad],
+      type: 'scatter',
+      data: groups[quad],
     }
+    // 象限基准线与淡色象限底挂在第一个系列上即可，避免 4 个系列重复绘制
+    if (idx === 0) {
+      s.markLine = {
+        silent: true,
+        symbol: 'none',
+        lineStyle: { color: 'rgba(60, 70, 110, 0.2)', type: 'dashed', width: 1.5 },
+        data: [{ xAxis: 50 }, { yAxis: 50 }],
+      }
+      s.markArea = {
+        silent: true,
+        // 象限名称/方位说明交给图例，图内只保留淡色底，避免与气泡重叠
+        label: { show: false },
+        data: [
+          [
+            {
+              name: '潜力待激活 (高潜力 / 低粘性)',
+              itemStyle: { color: 'rgba(124, 92, 252, 0.05)' },
+              coord: [0, 50],
+            },
+            { coord: [50, 100] },
+          ],
+          [
+            {
+              name: '核心采购用户 (高潜力 / 高粘性)',
+              itemStyle: { color: 'rgba(59, 111, 232, 0.05)' },
+              coord: [50, 50],
+            },
+            { coord: [100, 100] },
+          ],
+          [
+            {
+              name: '普通用户 (低潜力 / 低粘性)',
+              itemStyle: { color: 'rgba(156, 163, 175, 0.04)' },
+              coord: [0, 0],
+            },
+            { coord: [50, 50] },
+          ],
+          [
+            {
+              name: '稳定型用户 (低潜力 / 高粘性)',
+              itemStyle: { color: 'rgba(22, 168, 105, 0.05)' },
+              coord: [50, 0],
+            },
+            { coord: [100, 50] },
+          ],
+        ],
+      }
+    }
+    return s
   })
 
   return {
-    grid: { left: 44, right: 30, top: 28, bottom: 48 },
+    // 原生图例：点击仅切换对应象限系列的显隐
+    legend: {
+      top: 0,
+      left: 'center',
+      itemWidth: 10,
+      itemHeight: 10,
+      itemGap: 16,
+      textStyle: { color: TEXT_COLOR, fontSize: 11 },
+    },
+    grid: { left: 44, right: 30, top: 44, bottom: 48 },
     tooltip: {
       ...TOOLTIP,
       trigger: 'item',
@@ -133,58 +215,7 @@ const matrixOption = computed<echarts.EChartsOption>(() => {
       max: 100,
       splitLine: { show: false },
     }),
-    series: [
-      {
-        name: '采购人四象限',
-        type: 'scatter',
-        data: seriesData,
-        markLine: {
-          silent: true,
-          symbol: 'none',
-          lineStyle: { color: 'rgba(60, 70, 110, 0.2)', type: 'dashed', width: 1.5 },
-          data: [{ xAxis: 50 }, { yAxis: 50 }],
-        },
-        markArea: {
-          silent: true,
-          // 象限名称/方位说明已移到面板头部图例，图内只保留淡色底，避免与气泡重叠
-          label: { show: false },
-          data: [
-            [
-              {
-                name: '潜力待激活 (高潜力 / 低粘性)',
-                itemStyle: { color: 'rgba(124, 92, 252, 0.05)' },
-                coord: [0, 50],
-              },
-              { coord: [50, 100] },
-            ],
-            [
-              {
-                name: '核心采购用户 (高潜力 / 高粘性)',
-                itemStyle: { color: 'rgba(59, 111, 232, 0.05)' },
-                coord: [50, 50],
-              },
-              { coord: [100, 100] },
-            ],
-            [
-              {
-                name: '普通用户 (低潜力 / 低粘性)',
-                itemStyle: { color: 'rgba(156, 163, 175, 0.04)' },
-                coord: [0, 0],
-              },
-              { coord: [50, 50] },
-            ],
-            [
-              {
-                name: '稳定型用户 (低潜力 / 高粘性)',
-                itemStyle: { color: 'rgba(22, 168, 105, 0.05)' },
-                coord: [50, 0],
-              },
-              { coord: [100, 50] },
-            ],
-          ],
-        },
-      },
-    ],
+    series: series as echarts.EChartsOption['series'],
   }
 })
 
@@ -194,6 +225,39 @@ function handleChartClick(params: any) {
     const buyerId = params.value[3] as string
     emit('select', buyerId)
   }
+}
+
+// ============ 叠加卡片：上层「常采商品提示」 / 下层「用户潜力 × 用户粘性」二维分层图 ============
+// 沿用 yangcai-dataView 的堆叠卡片交互：两张卡绝对定位叠放，后卡偏移露边，
+// 点击后卡（或头部切换按钮）触发 GSAP 翻转——上层滑出、下层补位到前排。
+type StackCard = 'hint' | 'matrix'
+const activeCard = ref<StackCard>('hint') // 默认新卡片在上层
+const hintCardRef = ref<HTMLElement | null>(null)
+const matrixCardRef = ref<HTMLElement | null>(null)
+const stackAnimating = ref(false)
+
+function switchCard(target: StackCard) {
+  if (stackAnimating.value || activeCard.value === target) return
+  const topEl = activeCard.value === 'hint' ? hintCardRef.value : matrixCardRef.value
+  const behindEl = activeCard.value === 'hint' ? matrixCardRef.value : hintCardRef.value
+  if (!topEl || !behindEl) return
+  stackAnimating.value = true
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      activeCard.value = target
+      gsap.set([topEl, behindEl], { clearProps: 'all' })
+      // ChartBox 自带 ResizeObserver，翻转后会自动 resize，这里只复位动画状态
+      nextTick(() => { stackAnimating.value = false })
+    },
+  })
+
+  // 1. 上层卡片滑出
+  tl.to(topEl, { x: -80, y: 30, rotation: -2, opacity: 0, duration: 0.3, ease: 'power1.in' })
+  // 2. 交换层级
+  tl.set(behindEl, { zIndex: 2 })
+  // 3. 下层卡片补位到前排
+  tl.to(behindEl, { x: 0, y: 0, opacity: 1, duration: 0.6, ease: 'power1.out' })
 }
 
 // ============ 用户采购趋势 (可切换指标 & 时间范围) ============
@@ -471,11 +535,6 @@ const keyUserList = computed<KeyUserItem[]>(() => {
     list = D.value.keyUserGroups[selectedKeyCategory.value] || []
   }
 
-  // 象限过滤
-  if (selectedQuadrantFilter.value) {
-    list = list.filter((u) => u.quadrant === selectedQuadrantFilter.value)
-  }
-
   // 关键词过滤（采购人 / 企业 / 专区）
   if (searchKeyword.value.trim()) {
     const kw = searchKeyword.value.trim().toLowerCase()
@@ -497,14 +556,6 @@ const keyUserList = computed<KeyUserItem[]>(() => {
   // 附加专区名称（从 buyers 明细派生）
   return list.map((u) => ({ ...u, zone: zoneNamesOf(u.id).join('、') || '—' }))
 })
-
-function toggleQuadrantFilter(quadrant: string) {
-  if (selectedQuadrantFilter.value === quadrant) {
-    selectedQuadrantFilter.value = null
-  } else {
-    selectedQuadrantFilter.value = quadrant
-  }
-}
 
 // ============ 核心指标：四类用户类型明细弹窗 + 导出 Excel ============
 const userTypeModal = ref<{ name: string; cap: string; list: BuyerDetail[] } | null>(null)
@@ -669,58 +720,66 @@ function downloadBlob(blob: Blob, filename: string) {
 
     <!-- Row 2: 核心视觉中心 — 散点图(加大) + 右侧两张环形图 -->
     <section class="grid-hero">
-      <!-- 左侧：用户潜力 × 用户粘性 二维分层散点图 -->
-      <div class="panel matrix-panel">
-        <div class="panel-head">
-          <div>
-            <h2>“用户潜力 × 用户粘性” 二维分层图</h2>
-            <span class="note">气泡大小代表采购金额 · 点击散点可直接下钻个人档案</span>
+      <!-- 左侧：叠加卡片区 —— 上层「常采商品提示」，下层「二维分层图」 -->
+      <div class="stacked-card-wrapper">
+        <!-- 下层：用户潜力 × 用户粘性 二维分层散点图 -->
+        <article
+          ref="matrixCardRef"
+          class="panel panel-card matrix-panel"
+          :class="activeCard === 'matrix' ? 'is-front' : 'is-back'"
+          @click="activeCard !== 'matrix' && switchCard('matrix')"
+        >
+          <div class="panel-head">
+            <div>
+              <h2>“用户潜力 × 用户粘性” 二维分层图</h2>
+              <span class="note">气泡大小代表采购金额 · 点击散点可直接下钻个人档案</span>
+            </div>
+            <div class="card-tab-switcher">
+              <button
+                class="tab-btn"
+                :class="{ active: activeCard === 'hint' }"
+                @click.stop="switchCard('hint')"
+              >常采商品提示</button>
+              <button
+                class="tab-btn"
+                :class="{ active: activeCard === 'matrix' }"
+                @click.stop="switchCard('matrix')"
+              >分层图</button>
+            </div>
           </div>
-        </div>
-        <!-- 象限图例：色点对应图内淡色象限底，说明移到图外避免压点 -->
-        <div class="quadrant-badges">
-          <span
-            class="q-chip core"
-            :class="{ active: selectedQuadrantFilter === '核心采购用户' }"
-            @click="toggleQuadrantFilter('核心采购用户')"
-          >
-            <span class="q-dot"></span>
-            <span class="q-name">核心采购用户</span>
-            <span class="q-desc">高潜力 / 高粘性</span>
-            <span class="q-count">({{ D.quadrantDist['核心采购用户'] }})</span>
-          </span>
-          <span
-            class="q-chip potential"
-            :class="{ active: selectedQuadrantFilter === '潜力待激活' }"
-            @click="toggleQuadrantFilter('潜力待激活')"
-          >
-            <span class="q-dot"></span>
-            <span class="q-name">潜力待激活</span>
-            <span class="q-desc">高潜力 / 低粘性</span>
-            <span class="q-count">({{ D.quadrantDist['潜力待激活'] }})</span>
-          </span>
-          <span
-            class="q-chip stable"
-            :class="{ active: selectedQuadrantFilter === '稳定型用户' }"
-            @click="toggleQuadrantFilter('稳定型用户')"
-          >
-            <span class="q-dot"></span>
-            <span class="q-name">稳定型用户</span>
-            <span class="q-desc">低潜力 / 高粘性</span>
-            <span class="q-count">({{ D.quadrantDist['稳定型用户'] }})</span>
-          </span>
-          <span
-            class="q-chip normal"
-            :class="{ active: selectedQuadrantFilter === '普通用户' }"
-            @click="toggleQuadrantFilter('普通用户')"
-          >
-            <span class="q-dot"></span>
-            <span class="q-name">普通用户</span>
-            <span class="q-desc">低潜力 / 低粘性</span>
-            <span class="q-count">({{ D.quadrantDist['普通用户'] }})</span>
-          </span>
-        </div>
-        <ChartBox :option="matrixOption" height="460px" @click="handleChartClick" />
+          <!-- 四象限说明改用图表原生图例（见 matrixOption.legend），不再是可点击按钮、也不联动表格 -->
+          <ChartBox :option="matrixOption" height="440px" @click="handleChartClick" />
+        </article>
+
+        <!-- 上层：常采商品提示（内容待补充） -->
+        <article
+          ref="hintCardRef"
+          class="panel panel-card hint-card"
+          :class="activeCard === 'hint' ? 'is-front' : 'is-back'"
+          @click="activeCard !== 'hint' && switchCard('hint')"
+        >
+          <div class="panel-head">
+            <div>
+              <h2>常采商品提示</h2>
+              <span class="note">内容待补充</span>
+            </div>
+            <div class="card-tab-switcher">
+              <button
+                class="tab-btn"
+                :class="{ active: activeCard === 'hint' }"
+                @click.stop="switchCard('hint')"
+              >常采商品提示</button>
+              <button
+                class="tab-btn"
+                :class="{ active: activeCard === 'matrix' }"
+                @click.stop="switchCard('matrix')"
+              >分层图</button>
+            </div>
+          </div>
+          <div class="hint-body">
+            <p class="hint-placeholder">卡片内容待补充</p>
+          </div>
+        </article>
       </div>
 
       <!-- 右侧：两张环形图 -->
@@ -1228,6 +1287,96 @@ function downloadBlob(blob: Blob, filename: string) {
   order: 3; /* 保持中间 */
 }
 
+/* ===== 叠加卡片（照搬 yangcai-dataView 的堆叠卡片交互） ===== */
+.stacked-card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 560px;
+}
+
+.panel-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 预留 (14px, 12px) 偏移，使堆叠后总投影面积等于父容器 */
+  width: calc(100% - 14px);
+  height: calc(100% - 12px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* 上层卡片 */
+.panel-card.is-front {
+  transform: translate(0, 0);
+  z-index: 2;
+  opacity: 1;
+  box-shadow: 0 10px 28px rgba(26, 35, 50, 0.12), 0 2px 6px rgba(37, 99, 235, 0.08);
+}
+
+/* 下层卡片：偏移露边，营造堆叠立体感 */
+.panel-card.is-back {
+  transform: translate(14px, 12px);
+  z-index: 1;
+  opacity: 0.92;
+  cursor: pointer;
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.08);
+}
+
+/* 下层卡片内部不响应事件，点击整卡即翻到上层 */
+.panel-card.is-back .panel-head,
+.panel-card.is-back .chart,
+.panel-card.is-back .hint-body {
+  pointer-events: none;
+}
+
+/* 卡片切换控制 */
+.card-tab-switcher {
+  display: flex;
+  gap: 6px;
+  flex: none;
+}
+
+.tab-btn {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.tab-btn:hover {
+  border-color: rgba(0, 122, 255, 0.4);
+  color: var(--accent);
+}
+
+.tab-btn.active {
+  background: var(--accent-dim);
+  border-color: rgba(0, 122, 255, 0.4);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* 常采商品提示卡内容区（内容待补充） */
+.hint-body {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hint-placeholder {
+  color: var(--faint);
+  font-size: 14px;
+}
+
 .matrix-panel,
 .trend-panel,
 .category-panel,
@@ -1241,86 +1390,6 @@ function downloadBlob(blob: Blob, filename: string) {
   flex: 1 1 0;
   min-height: 0;
   height: auto !important;
-}
-
-.quadrant-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: -4px;
-  margin-bottom: 12px;
-  padding-top: 10px;
-  border-top: 1px dashed var(--rule);
-}
-
-.q-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  background: var(--bg);
-  border: 1px solid var(--panel-border);
-  color: var(--muted);
-  transition: all 0.2s ease;
-}
-
-.q-chip .q-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex: none;
-}
-
-.q-chip.core .q-dot {
-  background: #3b6fe8;
-}
-.q-chip.potential .q-dot {
-  background: #7c5cfc;
-}
-.q-chip.stable .q-dot {
-  background: #16a869;
-}
-.q-chip.normal .q-dot {
-  background: #9ca3af;
-}
-
-.q-chip .q-desc {
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-.q-chip .q-count {
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-}
-
-.q-chip:hover,
-.q-chip.active {
-  border-color: var(--accent);
-}
-
-.q-chip.core.active {
-  background: rgba(59, 111, 232, 0.1);
-  color: #3b6fe8;
-  border-color: #3b6fe8;
-}
-.q-chip.potential.active {
-  background: rgba(124, 92, 252, 0.1);
-  color: #7c5cfc;
-  border-color: #7c5cfc;
-}
-.q-chip.stable.active {
-  background: rgba(22, 168, 105, 0.1);
-  color: #16a869;
-  border-color: #16a869;
-}
-.q-chip.normal.active {
-  background: rgba(156, 163, 175, 0.1);
-  color: #6b7280;
-  border-color: #9ca3af;
 }
 
 /* 分段切换按钮 */

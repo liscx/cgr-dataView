@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12 16:04",
+  "generatedAt": "2026-10-13 09:42",
   "dataEndDate": "2026-09-21",
   "source": "阳光优采交易订单.xlsx",
   "kpis": {
@@ -57,7 +57,7 @@
       "firstOrder": "2026-09-09",
       "lastOrder": "2026-09-17",
       "ecShare": 0.0,
-      "potentialScore": 83,
+      "potentialScore": 85,
       "stickinessScore": 41,
       "quadrant": "潜力待激活",
       "status": "活跃",
@@ -175,7 +175,7 @@
       "firstOrder": "2026-05-21",
       "lastOrder": "2026-09-09",
       "ecShare": 0.0191,
-      "potentialScore": 91,
+      "potentialScore": 93,
       "stickinessScore": 75,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -824,7 +824,7 @@
       "firstOrder": "2026-01-23",
       "lastOrder": "2026-09-11",
       "ecShare": 0.1817,
-      "potentialScore": 82,
+      "potentialScore": 81,
       "stickinessScore": 72,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -1613,7 +1613,7 @@
       "firstOrder": "2026-07-30",
       "lastOrder": "2026-07-31",
       "ecShare": 1.0,
-      "potentialScore": 79,
+      "potentialScore": 82,
       "stickinessScore": 36,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -1717,7 +1717,7 @@
       "firstOrder": "2026-09-21",
       "lastOrder": "2026-09-21",
       "ecShare": 0.0,
-      "potentialScore": 79,
+      "potentialScore": 82,
       "stickinessScore": 60,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -1815,7 +1815,7 @@
       "firstOrder": "2026-07-24",
       "lastOrder": "2026-07-24",
       "ecShare": 0.0,
-      "potentialScore": 70,
+      "potentialScore": 76,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -1958,7 +1958,7 @@
       "firstOrder": "2026-06-18",
       "lastOrder": "2026-09-18",
       "ecShare": 0.0,
-      "potentialScore": 80,
+      "potentialScore": 81,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -2381,7 +2381,7 @@
       "firstOrder": "2026-08-04",
       "lastOrder": "2026-08-04",
       "ecShare": 1.0,
-      "potentialScore": 70,
+      "potentialScore": 75,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -2499,7 +2499,7 @@
       "firstOrder": "2026-01-27",
       "lastOrder": "2026-08-21",
       "ecShare": 0.1915,
-      "potentialScore": 76,
+      "potentialScore": 77,
       "stickinessScore": 76,
       "quadrant": "核心采购用户",
       "status": "正常",
@@ -2807,7 +2807,7 @@
       "firstOrder": "2026-03-07",
       "lastOrder": "2026-08-07",
       "ecShare": 0.0413,
-      "potentialScore": 86,
+      "potentialScore": 88,
       "stickinessScore": 72,
       "quadrant": "核心采购用户",
       "status": "低活跃",
@@ -2966,7 +2966,7 @@
       "firstOrder": "2026-06-26",
       "lastOrder": "2026-09-07",
       "ecShare": 0.0,
-      "potentialScore": 92,
+      "potentialScore": 91,
       "stickinessScore": 45,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -4328,7 +4328,7 @@
       "firstOrder": "2026-05-27",
       "lastOrder": "2026-09-21",
       "ecShare": 0.0054,
-      "potentialScore": 96,
+      "potentialScore": 95,
       "stickinessScore": 78,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -5637,7 +5637,7 @@
       "firstOrder": "2026-01-21",
       "lastOrder": "2026-09-20",
       "ecShare": 0.8729,
-      "potentialScore": 92,
+      "potentialScore": 91,
       "stickinessScore": 68,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -8279,7 +8279,7 @@
       "firstOrder": "2026-05-26",
       "lastOrder": "2026-09-21",
       "ecShare": 0.4553,
-      "potentialScore": 82,
+      "potentialScore": 81,
       "stickinessScore": 76,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -9297,7 +9297,7 @@
       "firstOrder": "2026-03-19",
       "lastOrder": "2026-03-19",
       "ecShare": 0.0,
-      "potentialScore": 44,
+      "potentialScore": 47,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -9417,7 +9417,7 @@
       "firstOrder": "2026-03-11",
       "lastOrder": "2026-09-18",
       "ecShare": 1.0,
-      "potentialScore": 94,
+      "potentialScore": 93,
       "stickinessScore": 67,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -10900,7 +10900,7 @@
       "firstOrder": "2026-01-30",
       "lastOrder": "2026-06-17",
       "ecShare": 0.2851,
-      "potentialScore": 58,
+      "potentialScore": 56,
       "stickinessScore": 47,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -11187,7 +11187,7 @@
       "firstOrder": "2026-02-02",
       "lastOrder": "2026-06-26",
       "ecShare": 0.0028,
-      "potentialScore": 75,
+      "potentialScore": 78,
       "stickinessScore": 76,
       "quadrant": "核心采购用户",
       "status": "沉默",
@@ -11773,7 +11773,7 @@
       "firstOrder": "2026-02-10",
       "lastOrder": "2026-09-17",
       "ecShare": 1.0,
-      "potentialScore": 82,
+      "potentialScore": 80,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -12311,7 +12311,7 @@
       "firstOrder": "2026-05-22",
       "lastOrder": "2026-09-10",
       "ecShare": 0.0,
-      "potentialScore": 77,
+      "potentialScore": 76,
       "stickinessScore": 69,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -12679,7 +12679,7 @@
       "firstOrder": "2026-02-27",
       "lastOrder": "2026-04-23",
       "ecShare": 0.5642,
-      "potentialScore": 56,
+      "potentialScore": 53,
       "stickinessScore": 39,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -12936,7 +12936,7 @@
       "firstOrder": "2026-06-11",
       "lastOrder": "2026-09-10",
       "ecShare": 0.9581,
-      "potentialScore": 72,
+      "potentialScore": 70,
       "stickinessScore": 47,
       "quadrant": "潜力待激活",
       "status": "回流",
@@ -13679,7 +13679,7 @@
       "firstOrder": "2026-08-04",
       "lastOrder": "2026-08-04",
       "ecShare": 0.0,
-      "potentialScore": 65,
+      "potentialScore": 70,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -13692,6 +13692,7 @@
       "amt3m": 29880.0,
       "amt12m": 29880.0,
       "tags": [
+        "高潜力",
         "无明显规律",
         "快速增长"
       ],
@@ -13755,7 +13756,7 @@
       "firstOrder": "2026-06-02",
       "lastOrder": "2026-07-30",
       "ecShare": 0.0,
-      "potentialScore": 76,
+      "potentialScore": 79,
       "stickinessScore": 70,
       "quadrant": "核心采购用户",
       "status": "低活跃",
@@ -14053,7 +14054,7 @@
       "firstOrder": "2026-08-18",
       "lastOrder": "2026-09-15",
       "ecShare": 1.0,
-      "potentialScore": 78,
+      "potentialScore": 80,
       "stickinessScore": 57,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -14650,7 +14651,7 @@
       "firstOrder": "2026-07-31",
       "lastOrder": "2026-07-31",
       "ecShare": 0.0,
-      "potentialScore": 64,
+      "potentialScore": 69,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -15579,7 +15580,7 @@
       "firstOrder": "2026-05-14",
       "lastOrder": "2026-09-08",
       "ecShare": 0.544,
-      "potentialScore": 74,
+      "potentialScore": 73,
       "stickinessScore": 70,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -15873,7 +15874,7 @@
       "firstOrder": "2026-02-02",
       "lastOrder": "2026-05-25",
       "ecShare": 1.0,
-      "potentialScore": 51,
+      "potentialScore": 50,
       "stickinessScore": 44,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -16015,7 +16016,7 @@
       "firstOrder": "2026-06-09",
       "lastOrder": "2026-09-11",
       "ecShare": 0.1054,
-      "potentialScore": 89,
+      "potentialScore": 88,
       "stickinessScore": 53,
       "quadrant": "核心采购用户",
       "status": "沉默",
@@ -16719,7 +16720,7 @@
       "firstOrder": "2026-02-04",
       "lastOrder": "2026-09-18",
       "ecShare": 0.4022,
-      "potentialScore": 84,
+      "potentialScore": 83,
       "stickinessScore": 70,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -17843,7 +17844,7 @@
       "firstOrder": "2026-04-27",
       "lastOrder": "2026-04-27",
       "ecShare": 0.0,
-      "potentialScore": 37,
+      "potentialScore": 39,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -17919,7 +17920,7 @@
       "firstOrder": "2026-09-20",
       "lastOrder": "2026-09-20",
       "ecShare": 0.8621,
-      "potentialScore": 74,
+      "potentialScore": 75,
       "stickinessScore": 58,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -18097,7 +18098,7 @@
       "firstOrder": "2026-07-03",
       "lastOrder": "2026-09-21",
       "ecShare": 0.1182,
-      "potentialScore": 85,
+      "potentialScore": 84,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -18891,7 +18892,7 @@
       "firstOrder": "2026-08-11",
       "lastOrder": "2026-08-11",
       "ecShare": 0.0,
-      "potentialScore": 62,
+      "potentialScore": 66,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -18967,7 +18968,7 @@
       "firstOrder": "2026-05-15",
       "lastOrder": "2026-05-15",
       "ecShare": 0.0,
-      "potentialScore": 37,
+      "potentialScore": 38,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -19043,7 +19044,7 @@
       "firstOrder": "2026-06-30",
       "lastOrder": "2026-06-30",
       "ecShare": 0.0,
-      "potentialScore": 61,
+      "potentialScore": 66,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -19119,7 +19120,7 @@
       "firstOrder": "2026-09-07",
       "lastOrder": "2026-09-07",
       "ecShare": 1.0,
-      "potentialScore": 61,
+      "potentialScore": 65,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -19271,7 +19272,7 @@
       "firstOrder": "2026-01-28",
       "lastOrder": "2026-07-16",
       "ecShare": 1.0,
-      "potentialScore": 68,
+      "potentialScore": 65,
       "stickinessScore": 49,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -19653,7 +19654,7 @@
       "firstOrder": "2026-08-25",
       "lastOrder": "2026-09-10",
       "ecShare": 0.0,
-      "potentialScore": 69,
+      "potentialScore": 71,
       "stickinessScore": 68,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -19666,6 +19667,7 @@
       "amt3m": 12375.0,
       "amt12m": 12375.0,
       "tags": [
+        "高潜力",
         "规律型",
         "快速增长"
       ],
@@ -19780,7 +19782,7 @@
       "firstOrder": "2026-01-26",
       "lastOrder": "2026-09-11",
       "ecShare": 1.0,
-      "potentialScore": 77,
+      "potentialScore": 75,
       "stickinessScore": 56,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -20682,7 +20684,7 @@
       "firstOrder": "2026-08-11",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0,
-      "potentialScore": 82,
+      "potentialScore": 81,
       "stickinessScore": 61,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -21245,7 +21247,7 @@
       "firstOrder": "2026-08-27",
       "lastOrder": "2026-09-20",
       "ecShare": 0.7553,
-      "potentialScore": 79,
+      "potentialScore": 78,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -21698,7 +21700,7 @@
       "firstOrder": "2025-12-15",
       "lastOrder": "2026-03-09",
       "ecShare": 1.0,
-      "potentialScore": 61,
+      "potentialScore": 57,
       "stickinessScore": 42,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -22754,7 +22756,7 @@
       "firstOrder": "2026-08-28",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0283,
-      "potentialScore": 70,
+      "potentialScore": 72,
       "stickinessScore": 67,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -22897,7 +22899,7 @@
       "firstOrder": "2026-02-05",
       "lastOrder": "2026-08-25",
       "ecShare": 1.0,
-      "potentialScore": 81,
+      "potentialScore": 79,
       "stickinessScore": 45,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -23596,7 +23598,7 @@
       "firstOrder": "2026-08-26",
       "lastOrder": "2026-08-26",
       "ecShare": 0.0,
-      "potentialScore": 59,
+      "potentialScore": 63,
       "stickinessScore": 52,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -23678,7 +23680,7 @@
       "firstOrder": "2026-06-26",
       "lastOrder": "2026-09-20",
       "ecShare": 0.711,
-      "potentialScore": 80,
+      "potentialScore": 78,
       "stickinessScore": 63,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -24501,7 +24503,7 @@
       "firstOrder": "2026-06-30",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0,
-      "potentialScore": 69,
+      "potentialScore": 70,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -24514,6 +24516,7 @@
       "amt3m": 7027.0,
       "amt12m": 7027.0,
       "tags": [
+        "高潜力",
         "高粘性",
         "较规律",
         "快速增长"
@@ -24634,9 +24637,9 @@
       "firstOrder": "2026-05-08",
       "lastOrder": "2026-05-12",
       "ecShare": 1.0,
-      "potentialScore": 50,
+      "potentialScore": 47,
       "stickinessScore": 27,
-      "quadrant": "潜力待激活",
+      "quadrant": "普通用户",
       "status": "沉默",
       "regularity": "较规律",
       "avgCycleDays": 1.0,
@@ -25696,7 +25699,7 @@
       "firstOrder": "2026-08-19",
       "lastOrder": "2026-09-18",
       "ecShare": 1.0,
-      "potentialScore": 76,
+      "potentialScore": 75,
       "stickinessScore": 61,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -26954,7 +26957,7 @@
       "firstOrder": "2026-04-10",
       "lastOrder": "2026-05-12",
       "ecShare": 0.2242,
-      "potentialScore": 45,
+      "potentialScore": 44,
       "stickinessScore": 40,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -27076,7 +27079,7 @@
       "firstOrder": "2026-07-24",
       "lastOrder": "2026-08-26",
       "ecShare": 1.0,
-      "potentialScore": 76,
+      "potentialScore": 75,
       "stickinessScore": 37,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -27660,7 +27663,7 @@
       "firstOrder": "2026-04-23",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 54,
+      "potentialScore": 50,
       "stickinessScore": 32,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -28785,7 +28788,7 @@
       "firstOrder": "2026-01-30",
       "lastOrder": "2026-09-11",
       "ecShare": 1.0,
-      "potentialScore": 76,
+      "potentialScore": 75,
       "stickinessScore": 63,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -29588,7 +29591,7 @@
       "firstOrder": "2026-02-05",
       "lastOrder": "2026-06-10",
       "ecShare": 1.0,
-      "potentialScore": 47,
+      "potentialScore": 45,
       "stickinessScore": 51,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -29725,7 +29728,7 @@
       "firstOrder": "2026-06-16",
       "lastOrder": "2026-06-16",
       "ecShare": 0.0,
-      "potentialScore": 33,
+      "potentialScore": 34,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -30077,7 +30080,7 @@
       "firstOrder": "2026-01-27",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 49,
+      "potentialScore": 46,
       "stickinessScore": 50,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -30249,7 +30252,7 @@
       "firstOrder": "2026-09-09",
       "lastOrder": "2026-09-09",
       "ecShare": 1.0,
-      "potentialScore": 63,
+      "potentialScore": 64,
       "stickinessScore": 39,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -30559,7 +30562,7 @@
       "firstOrder": "2026-07-23",
       "lastOrder": "2026-07-23",
       "ecShare": 0.0,
-      "potentialScore": 54,
+      "potentialScore": 57,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -30635,7 +30638,7 @@
       "firstOrder": "2026-07-23",
       "lastOrder": "2026-07-23",
       "ecShare": 0.0,
-      "potentialScore": 54,
+      "potentialScore": 57,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -30711,7 +30714,7 @@
       "firstOrder": "2026-06-05",
       "lastOrder": "2026-07-02",
       "ecShare": 0.2967,
-      "potentialScore": 75,
+      "potentialScore": 74,
       "stickinessScore": 38,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -30954,7 +30957,7 @@
       "firstOrder": "2026-09-07",
       "lastOrder": "2026-09-07",
       "ecShare": 0.0,
-      "potentialScore": 53,
+      "potentialScore": 57,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -31036,7 +31039,7 @@
       "firstOrder": "2026-04-21",
       "lastOrder": "2026-04-21",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 33,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -31128,7 +31131,7 @@
       "firstOrder": "2026-02-04",
       "lastOrder": "2026-03-02",
       "ecShare": 1.0,
-      "potentialScore": 46,
+      "potentialScore": 45,
       "stickinessScore": 37,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -31250,7 +31253,7 @@
       "firstOrder": "2026-06-08",
       "lastOrder": "2026-06-08",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 32,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -31327,7 +31330,7 @@
       "firstOrder": "2026-08-26",
       "lastOrder": "2026-08-26",
       "ecShare": 0.0,
-      "potentialScore": 52,
+      "potentialScore": 56,
       "stickinessScore": 52,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -31409,7 +31412,7 @@
       "firstOrder": "2026-09-15",
       "lastOrder": "2026-09-15",
       "ecShare": 0.0,
-      "potentialScore": 52,
+      "potentialScore": 56,
       "stickinessScore": 58,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -31491,7 +31494,7 @@
       "firstOrder": "2026-06-05",
       "lastOrder": "2026-09-15",
       "ecShare": 0.5144,
-      "potentialScore": 77,
+      "potentialScore": 75,
       "stickinessScore": 56,
       "quadrant": "核心采购用户",
       "status": "低活跃",
@@ -32534,7 +32537,7 @@
       "firstOrder": "2026-09-16",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0,
-      "potentialScore": 60,
+      "potentialScore": 61,
       "stickinessScore": 62,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -32686,7 +32689,7 @@
       "firstOrder": "2026-09-10",
       "lastOrder": "2026-09-10",
       "ecShare": 1.0,
-      "potentialScore": 51,
+      "potentialScore": 55,
       "stickinessScore": 56,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -32768,7 +32771,7 @@
       "firstOrder": "2026-06-15",
       "lastOrder": "2026-09-18",
       "ecShare": 1.0,
-      "potentialScore": 73,
+      "potentialScore": 72,
       "stickinessScore": 75,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -33477,7 +33480,7 @@
       "firstOrder": "2026-06-25",
       "lastOrder": "2026-09-03",
       "ecShare": 1.0,
-      "potentialScore": 70,
+      "potentialScore": 69,
       "stickinessScore": 43,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -33490,7 +33493,6 @@
       "amt3m": 3862.16,
       "amt12m": 3862.16,
       "tags": [
-        "高潜力",
         "无明显规律",
         "快速增长",
         "周期严重偏离"
@@ -34036,7 +34038,7 @@
       "firstOrder": "2026-06-23",
       "lastOrder": "2026-09-16",
       "ecShare": 0.0983,
-      "potentialScore": 67,
+      "potentialScore": 66,
       "stickinessScore": 66,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -34613,7 +34615,7 @@
       "firstOrder": "2026-07-24",
       "lastOrder": "2026-07-24",
       "ecShare": 0.0,
-      "potentialScore": 50,
+      "potentialScore": 53,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -34695,7 +34697,7 @@
       "firstOrder": "2026-09-20",
       "lastOrder": "2026-09-20",
       "ecShare": 1.0,
-      "potentialScore": 58,
+      "potentialScore": 59,
       "stickinessScore": 58,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -34797,7 +34799,7 @@
       "firstOrder": "2026-03-12",
       "lastOrder": "2026-08-03",
       "ecShare": 1.0,
-      "potentialScore": 59,
+      "potentialScore": 56,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "沉默",
@@ -35020,7 +35022,7 @@
       "firstOrder": "2026-07-15",
       "lastOrder": "2026-08-14",
       "ecShare": 1.0,
-      "potentialScore": 59,
+      "potentialScore": 61,
       "stickinessScore": 47,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -35442,7 +35444,7 @@
       "firstOrder": "2026-06-08",
       "lastOrder": "2026-08-21",
       "ecShare": 1.0,
-      "potentialScore": 73,
+      "potentialScore": 71,
       "stickinessScore": 42,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -35971,7 +35973,7 @@
       "firstOrder": "2026-04-07",
       "lastOrder": "2026-07-24",
       "ecShare": 1.0,
-      "potentialScore": 68,
+      "potentialScore": 67,
       "stickinessScore": 42,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -36154,7 +36156,7 @@
       "firstOrder": "2026-06-26",
       "lastOrder": "2026-09-16",
       "ecShare": 1.0,
-      "potentialScore": 66,
+      "potentialScore": 65,
       "stickinessScore": 57,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -36471,9 +36473,9 @@
       "firstOrder": "2026-06-29",
       "lastOrder": "2026-06-29",
       "ecShare": 1.0,
-      "potentialScore": 48,
+      "potentialScore": 50,
       "stickinessScore": 46,
-      "quadrant": "普通用户",
+      "quadrant": "潜力待激活",
       "status": "低活跃",
       "regularity": "无明显规律",
       "avgCycleDays": 84.0,
@@ -36553,7 +36555,7 @@
       "firstOrder": "2026-07-13",
       "lastOrder": "2026-09-15",
       "ecShare": 1.0,
-      "potentialScore": 64,
+      "potentialScore": 63,
       "stickinessScore": 64,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -36835,7 +36837,7 @@
       "firstOrder": "2026-07-20",
       "lastOrder": "2026-07-20",
       "ecShare": 0.0,
-      "potentialScore": 47,
+      "potentialScore": 49,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -36911,7 +36913,7 @@
       "firstOrder": "2026-09-03",
       "lastOrder": "2026-09-03",
       "ecShare": 0.0,
-      "potentialScore": 47,
+      "potentialScore": 49,
       "stickinessScore": 54,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -36993,7 +36995,7 @@
       "firstOrder": "2026-06-30",
       "lastOrder": "2026-09-08",
       "ecShare": 0.0,
-      "potentialScore": 58,
+      "potentialScore": 57,
       "stickinessScore": 71,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -37396,7 +37398,7 @@
       "firstOrder": "2026-05-20",
       "lastOrder": "2026-08-25",
       "ecShare": 0.3052,
-      "potentialScore": 68,
+      "potentialScore": 66,
       "stickinessScore": 48,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -38043,7 +38045,7 @@
       "firstOrder": "2026-01-22",
       "lastOrder": "2026-09-14",
       "ecShare": 1.0,
-      "potentialScore": 65,
+      "potentialScore": 62,
       "stickinessScore": 69,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -38475,7 +38477,7 @@
       "firstOrder": "2026-02-05",
       "lastOrder": "2026-02-05",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 32,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -38566,7 +38568,7 @@
       "firstOrder": "2026-06-11",
       "lastOrder": "2026-06-23",
       "ecShare": 1.0,
-      "potentialScore": 54,
+      "potentialScore": 51,
       "stickinessScore": 26,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -38844,7 +38846,7 @@
       "firstOrder": "2026-02-10",
       "lastOrder": "2026-09-20",
       "ecShare": 1.0,
-      "potentialScore": 65,
+      "potentialScore": 62,
       "stickinessScore": 72,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -39157,7 +39159,7 @@
       "firstOrder": "2026-07-03",
       "lastOrder": "2026-08-25",
       "ecShare": 1.0,
-      "potentialScore": 59,
+      "potentialScore": 58,
       "stickinessScore": 43,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -39411,7 +39413,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 0.0,
-      "potentialScore": 26,
+      "potentialScore": 27,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -39488,7 +39490,7 @@
       "firstOrder": "2026-07-14",
       "lastOrder": "2026-07-14",
       "ecShare": 0.0,
-      "potentialScore": 44,
+      "potentialScore": 47,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -39686,7 +39688,7 @@
       "firstOrder": "2026-07-15",
       "lastOrder": "2026-07-15",
       "ecShare": 0.8708,
-      "potentialScore": 59,
+      "potentialScore": 57,
       "stickinessScore": 34,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -39915,7 +39917,7 @@
       "firstOrder": "2026-07-20",
       "lastOrder": "2026-09-14",
       "ecShare": 1.0,
-      "potentialScore": 57,
+      "potentialScore": 56,
       "stickinessScore": 67,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -40067,7 +40069,7 @@
       "firstOrder": "2026-06-23",
       "lastOrder": "2026-07-22",
       "ecShare": 1.0,
-      "potentialScore": 54,
+      "potentialScore": 53,
       "stickinessScore": 45,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -40298,7 +40300,7 @@
       "firstOrder": "2026-09-15",
       "lastOrder": "2026-09-15",
       "ecShare": 0.0,
-      "potentialScore": 42,
+      "potentialScore": 44,
       "stickinessScore": 58,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -40400,7 +40402,7 @@
       "firstOrder": "2026-09-17",
       "lastOrder": "2026-09-17",
       "ecShare": 1.0,
-      "potentialScore": 42,
+      "potentialScore": 44,
       "stickinessScore": 58,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -40600,7 +40602,7 @@
       "firstOrder": "2026-08-04",
       "lastOrder": "2026-08-04",
       "ecShare": 1.0,
-      "potentialScore": 41,
+      "potentialScore": 43,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -40676,7 +40678,7 @@
       "firstOrder": "2026-08-21",
       "lastOrder": "2026-08-21",
       "ecShare": 1.0,
-      "potentialScore": 41,
+      "potentialScore": 43,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "正常",
@@ -40758,7 +40760,7 @@
       "firstOrder": "2026-07-09",
       "lastOrder": "2026-07-09",
       "ecShare": 1.0,
-      "potentialScore": 40,
+      "potentialScore": 43,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -40834,7 +40836,7 @@
       "firstOrder": "2026-03-31",
       "lastOrder": "2026-03-31",
       "ecShare": 1.0,
-      "potentialScore": 24,
+      "potentialScore": 25,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -40911,7 +40913,7 @@
       "firstOrder": "2026-04-14",
       "lastOrder": "2026-05-09",
       "ecShare": 1.0,
-      "potentialScore": 40,
+      "potentialScore": 36,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -41054,7 +41056,7 @@
       "firstOrder": "2026-02-02",
       "lastOrder": "2026-03-23",
       "ecShare": 1.0,
-      "potentialScore": 43,
+      "potentialScore": 40,
       "stickinessScore": 37,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -41349,7 +41351,7 @@
       "firstOrder": "2026-06-16",
       "lastOrder": "2026-06-16",
       "ecShare": 1.0,
-      "potentialScore": 37,
+      "potentialScore": 34,
       "stickinessScore": 33,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -41362,6 +41364,7 @@
       "amt3m": 0.0,
       "amt12m": 639.74,
       "tags": [
+        "普通潜力",
         "低粘性",
         "规律型",
         "采购下降",
@@ -41502,7 +41505,7 @@
       "firstOrder": "2026-03-18",
       "lastOrder": "2026-08-31",
       "ecShare": 1.0,
-      "potentialScore": 61,
+      "potentialScore": 59,
       "stickinessScore": 65,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -41704,7 +41707,7 @@
       "firstOrder": "2026-05-08",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 29,
       "stickinessScore": 39,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -41950,7 +41953,7 @@
       "firstOrder": "2026-08-14",
       "lastOrder": "2026-08-14",
       "ecShare": 1.0,
-      "potentialScore": 39,
+      "potentialScore": 40,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -42032,7 +42035,7 @@
       "firstOrder": "2026-05-29",
       "lastOrder": "2026-05-29",
       "ecShare": 1.0,
-      "potentialScore": 34,
+      "potentialScore": 31,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -42141,7 +42144,7 @@
       "firstOrder": "2026-05-12",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 29,
       "stickinessScore": 39,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -42234,7 +42237,7 @@
       "firstOrder": "2026-07-06",
       "lastOrder": "2026-07-06",
       "ecShare": 1.0,
-      "potentialScore": 38,
+      "potentialScore": 40,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -42464,7 +42467,7 @@
       "firstOrder": "2026-09-11",
       "lastOrder": "2026-09-11",
       "ecShare": 1.0,
-      "potentialScore": 37,
+      "potentialScore": 39,
       "stickinessScore": 57,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -42606,7 +42609,7 @@
       "firstOrder": "2026-04-23",
       "lastOrder": "2026-09-17",
       "ecShare": 1.0,
-      "potentialScore": 41,
+      "potentialScore": 39,
       "stickinessScore": 70,
       "quadrant": "稳定型用户",
       "status": "回流",
@@ -42980,7 +42983,7 @@
       "firstOrder": "2026-07-17",
       "lastOrder": "2026-07-17",
       "ecShare": 1.0,
-      "potentialScore": 45,
+      "potentialScore": 44,
       "stickinessScore": 34,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -43103,7 +43106,7 @@
       "firstOrder": "2026-02-04",
       "lastOrder": "2026-02-04",
       "ecShare": 1.0,
-      "potentialScore": 33,
+      "potentialScore": 31,
       "stickinessScore": 31,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -43196,7 +43199,7 @@
       "firstOrder": "2026-09-01",
       "lastOrder": "2026-09-01",
       "ecShare": 1.0,
-      "potentialScore": 47,
+      "potentialScore": 46,
       "stickinessScore": 37,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -43334,7 +43337,7 @@
       "firstOrder": "2026-07-16",
       "lastOrder": "2026-08-03",
       "ecShare": 1.0,
-      "potentialScore": 44,
+      "potentialScore": 43,
       "stickinessScore": 53,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -43538,7 +43541,7 @@
       "firstOrder": "2026-09-16",
       "lastOrder": "2026-09-16",
       "ecShare": 1.0,
-      "potentialScore": 35,
+      "potentialScore": 37,
       "stickinessScore": 58,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -43551,7 +43554,6 @@
       "amt3m": 203.88,
       "amt12m": 203.88,
       "tags": [
-        "普通潜力",
         "无明显规律",
         "快速增长"
       ],
@@ -44093,7 +44095,7 @@
       "firstOrder": "2026-01-29",
       "lastOrder": "2026-01-29",
       "ecShare": 0.0,
-      "potentialScore": 23,
+      "potentialScore": 24,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -44169,7 +44171,7 @@
       "firstOrder": "2026-05-08",
       "lastOrder": "2026-05-08",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 28,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -44354,7 +44356,7 @@
       "firstOrder": "2026-05-06",
       "lastOrder": "2026-05-06",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 25,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -44448,7 +44450,7 @@
       "firstOrder": "2026-05-20",
       "lastOrder": "2026-05-20",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 25,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -44572,7 +44574,7 @@
       "firstOrder": "2026-06-29",
       "lastOrder": "2026-06-29",
       "ecShare": 1.0,
-      "potentialScore": 33,
+      "potentialScore": 34,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -44649,7 +44651,7 @@
       "firstOrder": "2026-06-16",
       "lastOrder": "2026-06-16",
       "ecShare": 1.0,
-      "potentialScore": 19,
+      "potentialScore": 18,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -44726,7 +44728,7 @@
       "firstOrder": "2026-04-29",
       "lastOrder": "2026-04-29",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 24,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -44927,7 +44929,7 @@
       "firstOrder": "2025-08-28",
       "lastOrder": "2025-12-11",
       "ecShare": 0.2716,
-      "potentialScore": 35,
+      "potentialScore": 32,
       "stickinessScore": 41,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -45059,7 +45061,7 @@
       "firstOrder": "2026-03-25",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 32,
+      "potentialScore": 28,
       "stickinessScore": 47,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -45345,7 +45347,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 18,
+      "potentialScore": 17,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -45422,7 +45424,7 @@
       "firstOrder": "2026-05-19",
       "lastOrder": "2026-05-19",
       "ecShare": 1.0,
-      "potentialScore": 18,
+      "potentialScore": 17,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -45576,7 +45578,7 @@
       "firstOrder": "2026-08-03",
       "lastOrder": "2026-08-03",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 32,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -45659,7 +45661,7 @@
       "firstOrder": "2026-06-15",
       "lastOrder": "2026-07-08",
       "ecShare": 1.0,
-      "potentialScore": 33,
+      "potentialScore": 31,
       "stickinessScore": 52,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -45757,7 +45759,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 17,
+      "potentialScore": 16,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -45910,7 +45912,7 @@
       "firstOrder": "2026-06-29",
       "lastOrder": "2026-06-29",
       "ecShare": 1.0,
-      "potentialScore": 30,
+      "potentialScore": 31,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -46064,7 +46066,7 @@
       "firstOrder": "2026-07-28",
       "lastOrder": "2026-07-28",
       "ecShare": 1.0,
-      "potentialScore": 30,
+      "potentialScore": 31,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -46141,7 +46143,7 @@
       "firstOrder": "2026-01-29",
       "lastOrder": "2026-01-29",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 28,
       "stickinessScore": 31,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -46249,7 +46251,7 @@
       "firstOrder": "2025-09-21",
       "lastOrder": "2025-09-21",
       "ecShare": 1.0,
-      "potentialScore": 20,
+      "potentialScore": 19,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -46401,7 +46403,7 @@
       "firstOrder": "2026-04-01",
       "lastOrder": "2026-04-01",
       "ecShare": 1.0,
-      "potentialScore": 16,
+      "potentialScore": 15,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -46631,7 +46633,7 @@
       "firstOrder": "2026-04-20",
       "lastOrder": "2026-04-20",
       "ecShare": 1.0,
-      "potentialScore": 15,
+      "potentialScore": 14,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -46708,7 +46710,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 15,
+      "potentialScore": 14,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -46785,7 +46787,7 @@
       "firstOrder": "2026-05-22",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 15,
+      "potentialScore": 14,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -46862,7 +46864,7 @@
       "firstOrder": "2026-07-02",
       "lastOrder": "2026-07-02",
       "ecShare": 1.0,
-      "potentialScore": 28,
+      "potentialScore": 29,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -47022,7 +47024,7 @@
       "firstOrder": "2026-08-18",
       "lastOrder": "2026-08-18",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 28,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "正常",
@@ -47105,7 +47107,7 @@
       "firstOrder": "2026-07-31",
       "lastOrder": "2026-07-31",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 28,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -47182,7 +47184,7 @@
       "firstOrder": "2026-01-28",
       "lastOrder": "2026-01-28",
       "ecShare": 1.0,
-      "potentialScore": 18,
+      "potentialScore": 17,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -47335,7 +47337,7 @@
       "firstOrder": "2026-05-12",
       "lastOrder": "2026-05-12",
       "ecShare": 1.0,
-      "potentialScore": 14,
+      "potentialScore": 13,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -47412,7 +47414,7 @@
       "firstOrder": "2026-09-21",
       "lastOrder": "2026-09-21",
       "ecShare": 1.0,
-      "potentialScore": 26,
+      "potentialScore": 27,
       "stickinessScore": 60,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -47571,7 +47573,7 @@
       "firstOrder": "2026-03-17",
       "lastOrder": "2026-03-17",
       "ecShare": 1.0,
-      "potentialScore": 17,
+      "potentialScore": 16,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -47647,7 +47649,7 @@
       "firstOrder": "2026-05-27",
       "lastOrder": "2026-05-27",
       "ecShare": 1.0,
-      "potentialScore": 13,
+      "potentialScore": 12,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -48162,7 +48164,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 83,
+        "potentialScore": 85,
         "stickinessScore": 41
       },
       {
@@ -48178,7 +48180,7 @@
         "cycleDeviationRatio": 0.54,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 91,
+        "potentialScore": 93,
         "stickinessScore": 75
       },
       {
@@ -48194,7 +48196,7 @@
         "cycleDeviationRatio": 52.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 79,
+        "potentialScore": 82,
         "stickinessScore": 36
       },
       {
@@ -48210,7 +48212,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 79,
+        "potentialScore": 82,
         "stickinessScore": 60
       },
       {
@@ -48226,7 +48228,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 70,
+        "potentialScore": 76,
         "stickinessScore": 46
       },
       {
@@ -48242,7 +48244,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 70,
+        "potentialScore": 75,
         "stickinessScore": 46
       },
       {
@@ -48258,7 +48260,7 @@
         "cycleDeviationRatio": 6.14,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 92,
+        "potentialScore": 91,
         "stickinessScore": 45
       },
       {
@@ -48274,7 +48276,7 @@
         "cycleDeviationRatio": 0.36,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 92,
+        "potentialScore": 91,
         "stickinessScore": 68
       },
       {
@@ -48290,7 +48292,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 96,
+        "potentialScore": 95,
         "stickinessScore": 78
       },
       {
@@ -48306,7 +48308,7 @@
         "cycleDeviationRatio": 0.88,
         "status": "低活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 86,
+        "potentialScore": 88,
         "stickinessScore": 72
       },
       {
@@ -48322,7 +48324,7 @@
         "cycleDeviationRatio": 0.1,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 80,
+        "potentialScore": 81,
         "stickinessScore": 73
       },
       {
@@ -48370,7 +48372,7 @@
         "cycleDeviationRatio": 0.6,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 75,
+        "potentialScore": 78,
         "stickinessScore": 76
       },
       {
@@ -48402,7 +48404,7 @@
         "cycleDeviationRatio": 0.6,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 94,
+        "potentialScore": 93,
         "stickinessScore": 67
       },
       {
@@ -48434,7 +48436,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 65,
+        "potentialScore": 70,
         "stickinessScore": 46
       },
       {
@@ -48450,7 +48452,7 @@
         "cycleDeviationRatio": 0.64,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 78,
+        "potentialScore": 80,
         "stickinessScore": 57
       },
       {
@@ -48482,7 +48484,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 64,
+        "potentialScore": 69,
         "stickinessScore": 46
       },
       {
@@ -48498,7 +48500,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 82,
+        "potentialScore": 81,
         "stickinessScore": 76
       },
       {
@@ -48514,7 +48516,7 @@
         "cycleDeviationRatio": 0.91,
         "status": "低活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 76,
+        "potentialScore": 79,
         "stickinessScore": 70
       },
       {
@@ -48530,7 +48532,7 @@
         "cycleDeviationRatio": 2.34,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 89,
+        "potentialScore": 88,
         "stickinessScore": 53
       },
       {
@@ -48546,7 +48548,7 @@
         "cycleDeviationRatio": 0.14,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 74,
+        "potentialScore": 75,
         "stickinessScore": 58
       },
       {
@@ -48562,7 +48564,7 @@
         "cycleDeviationRatio": 0.46,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 82,
+        "potentialScore": 80,
         "stickinessScore": 73
       },
       {
@@ -48578,7 +48580,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 85,
+        "potentialScore": 84,
         "stickinessScore": 73
       },
       {
@@ -48594,7 +48596,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 62,
+        "potentialScore": 66,
         "stickinessScore": 46
       },
       {
@@ -48610,7 +48612,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 61,
+        "potentialScore": 66,
         "stickinessScore": 46
       },
       {
@@ -48626,7 +48628,7 @@
         "cycleDeviationRatio": 0.47,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 61,
+        "potentialScore": 65,
         "stickinessScore": 55
       },
       {
@@ -48642,7 +48644,7 @@
         "cycleDeviationRatio": 0.69,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 69,
+        "potentialScore": 71,
         "stickinessScore": 68
       },
       {
@@ -48674,7 +48676,7 @@
         "cycleDeviationRatio": 0.72,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 82,
+        "potentialScore": 81,
         "stickinessScore": 61
       },
       {
@@ -48690,7 +48692,7 @@
         "cycleDeviationRatio": 0.38,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 79,
+        "potentialScore": 78,
         "stickinessScore": 55
       },
       {
@@ -48706,8 +48708,24 @@
         "cycleDeviationRatio": 0.09,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 70,
+        "potentialScore": 72,
         "stickinessScore": 67
+      },
+      {
+        "id": "湖南医发投养老产业有限公司||孟舟",
+        "name": "孟舟",
+        "company": "湖南医发投养老产业有限公司",
+        "deptGroup": "采购主体（未细分）",
+        "amount": 8599.0,
+        "amt3m": 8599.0,
+        "growthRate3m": 100.0,
+        "avgCycleDays": 30.0,
+        "inactiveDays": 26,
+        "cycleDeviationRatio": 0.87,
+        "status": "活跃",
+        "quadrant": "核心采购用户",
+        "potentialScore": 63,
+        "stickinessScore": 52
       },
       {
         "id": "中煤江南建设发展集团有限公司（广东煤炭地质局）||刘茜尔",
@@ -48722,7 +48740,7 @@
         "cycleDeviationRatio": 3.36,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 81,
+        "potentialScore": 79,
         "stickinessScore": 45
       },
       {
@@ -48738,7 +48756,7 @@
         "cycleDeviationRatio": 0.28,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 80,
+        "potentialScore": 78,
         "stickinessScore": 63
       },
       {
@@ -48754,7 +48772,7 @@
         "cycleDeviationRatio": 0.02,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 69,
+        "potentialScore": 70,
         "stickinessScore": 73
       },
       {
@@ -48786,7 +48804,7 @@
         "cycleDeviationRatio": 0.8,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 76,
+        "potentialScore": 75,
         "stickinessScore": 61
       },
       {
@@ -48802,7 +48820,7 @@
         "cycleDeviationRatio": 7.09,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 76,
+        "potentialScore": 75,
         "stickinessScore": 37
       },
       {
@@ -48834,7 +48852,7 @@
         "cycleDeviationRatio": 0.62,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 76,
+        "potentialScore": 75,
         "stickinessScore": 63
       },
       {
@@ -48850,7 +48868,7 @@
         "cycleDeviationRatio": 1.05,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 77,
+        "potentialScore": 75,
         "stickinessScore": 56
       },
       {
@@ -48882,7 +48900,7 @@
         "cycleDeviationRatio": 1.71,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 63,
+        "potentialScore": 64,
         "stickinessScore": 39
       },
       {
@@ -48914,7 +48932,7 @@
         "cycleDeviationRatio": 0.25,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 60,
+        "potentialScore": 61,
         "stickinessScore": 62
       },
       {
@@ -48930,7 +48948,7 @@
         "cycleDeviationRatio": 21.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 75,
+        "potentialScore": 74,
         "stickinessScore": 38
       },
       {
@@ -48946,7 +48964,7 @@
         "cycleDeviationRatio": 2.57,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 70,
+        "potentialScore": 69,
         "stickinessScore": 43
       },
       {
@@ -48962,7 +48980,7 @@
         "cycleDeviationRatio": 0.19,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 73,
+        "potentialScore": 72,
         "stickinessScore": 75
       },
       {
@@ -48978,7 +48996,7 @@
         "cycleDeviationRatio": 0.35,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 67,
+        "potentialScore": 66,
         "stickinessScore": 66
       },
       {
@@ -48994,7 +49012,7 @@
         "cycleDeviationRatio": 0.25,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 84,
+        "potentialScore": 83,
         "stickinessScore": 70
       },
       {
@@ -49010,8 +49028,24 @@
         "cycleDeviationRatio": 1.47,
         "status": "低活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 77,
+        "potentialScore": 75,
         "stickinessScore": 56
+      },
+      {
+        "id": "中煤长江基础建设有限公司岩土分公司||王向红",
+        "name": "王向红",
+        "company": "中煤长江基础建设有限公司岩土分公司",
+        "deptGroup": "采购主体（未细分）",
+        "amount": 3462.8,
+        "amt3m": 3462.8,
+        "growthRate3m": 100.0,
+        "avgCycleDays": 15.0,
+        "inactiveDays": 38,
+        "cycleDeviationRatio": 2.53,
+        "status": "沉默",
+        "quadrant": "潜力待激活",
+        "potentialScore": 61,
+        "stickinessScore": 47
       },
       {
         "id": "绍兴市环科环保科技有限公司||何斌权",
@@ -49042,7 +49076,7 @@
         "cycleDeviationRatio": 4.61,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 73,
+        "potentialScore": 71,
         "stickinessScore": 42
       },
       {
@@ -49058,7 +49092,7 @@
         "cycleDeviationRatio": 0.49,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 66,
+        "potentialScore": 65,
         "stickinessScore": 57
       },
       {
@@ -49074,7 +49108,7 @@
         "cycleDeviationRatio": 2.73,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 68,
+        "potentialScore": 67,
         "stickinessScore": 42
       },
       {
@@ -49090,7 +49124,7 @@
         "cycleDeviationRatio": 0.56,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 64,
+        "potentialScore": 63,
         "stickinessScore": 64
       },
       {
@@ -49106,7 +49140,7 @@
         "cycleDeviationRatio": 1.67,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 68,
+        "potentialScore": 66,
         "stickinessScore": 48
       },
       {
@@ -49122,7 +49156,7 @@
         "cycleDeviationRatio": 0.05,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 65,
+        "potentialScore": 62,
         "stickinessScore": 72
       },
       {
@@ -49138,40 +49172,8 @@
         "cycleDeviationRatio": 0.48,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 65,
+        "potentialScore": 62,
         "stickinessScore": 69
-      },
-      {
-        "id": "中能化（河北）新能源汽车产业有限公司||朱沐霏",
-        "name": "朱沐霏",
-        "company": "中能化（河北）新能源汽车产业有限公司",
-        "deptGroup": "采购主体（未细分）",
-        "amount": 607.1,
-        "amt3m": 361.46,
-        "growthRate3m": 640.1,
-        "avgCycleDays": 23.7,
-        "inactiveDays": 21,
-        "cycleDeviationRatio": 0.89,
-        "status": "回流",
-        "quadrant": "核心采购用户",
-        "potentialScore": 61,
-        "stickinessScore": 65
-      },
-      {
-        "id": "新疆医药产业集团有限公司||新疆医药产业集团有限公司",
-        "name": "新疆医药产业集团有限公司",
-        "company": "新疆医药产业集团有限公司",
-        "deptGroup": "采购主体（未细分）",
-        "amount": 9757.59,
-        "amt3m": 0.0,
-        "growthRate3m": 0.0,
-        "avgCycleDays": 3.7,
-        "inactiveDays": 196,
-        "cycleDeviationRatio": 53.67,
-        "status": "沉默",
-        "quadrant": "潜力待激活",
-        "potentialScore": 61,
-        "stickinessScore": 42
       }
     ],
     "沉默用户": [
@@ -49188,7 +49190,7 @@
         "cycleDeviationRatio": 52.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 79,
+        "potentialScore": 82,
         "stickinessScore": 36
       },
       {
@@ -49204,7 +49206,7 @@
         "cycleDeviationRatio": 6.14,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 92,
+        "potentialScore": 91,
         "stickinessScore": 45
       },
       {
@@ -49220,7 +49222,7 @@
         "cycleDeviationRatio": 0.6,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 75,
+        "potentialScore": 78,
         "stickinessScore": 76
       },
       {
@@ -49252,7 +49254,7 @@
         "cycleDeviationRatio": 2.34,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 89,
+        "potentialScore": 88,
         "stickinessScore": 53
       },
       {
@@ -49268,7 +49270,7 @@
         "cycleDeviationRatio": 3.36,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 81,
+        "potentialScore": 79,
         "stickinessScore": 45
       },
       {
@@ -49284,7 +49286,7 @@
         "cycleDeviationRatio": 7.09,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 76,
+        "potentialScore": 75,
         "stickinessScore": 37
       },
       {
@@ -49332,7 +49334,7 @@
         "cycleDeviationRatio": 21.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 75,
+        "potentialScore": 74,
         "stickinessScore": 38
       },
       {
@@ -49348,7 +49350,7 @@
         "cycleDeviationRatio": 2.57,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 70,
+        "potentialScore": 69,
         "stickinessScore": 43
       },
       {
@@ -49364,7 +49366,7 @@
         "cycleDeviationRatio": 2.53,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 59,
+        "potentialScore": 61,
         "stickinessScore": 47
       },
       {
@@ -49396,7 +49398,7 @@
         "cycleDeviationRatio": 4.61,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 73,
+        "potentialScore": 71,
         "stickinessScore": 42
       },
       {
@@ -49412,7 +49414,7 @@
         "cycleDeviationRatio": 2.73,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 68,
+        "potentialScore": 67,
         "stickinessScore": 42
       },
       {
@@ -49428,7 +49430,7 @@
         "cycleDeviationRatio": 9.71,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 59,
+        "potentialScore": 57,
         "stickinessScore": 34
       },
       {
@@ -49460,7 +49462,7 @@
         "cycleDeviationRatio": 4.36,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 68,
+        "potentialScore": 65,
         "stickinessScore": 49
       },
       {
@@ -49492,7 +49494,7 @@
         "cycleDeviationRatio": 2.38,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 59,
+        "potentialScore": 56,
         "stickinessScore": 55
       },
       {
@@ -49508,7 +49510,7 @@
         "cycleDeviationRatio": 4.21,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 53,
         "stickinessScore": 45
       },
       {
@@ -49572,7 +49574,7 @@
         "cycleDeviationRatio": 9.43,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 45,
+        "potentialScore": 44,
         "stickinessScore": 34
       },
       {
@@ -49588,7 +49590,7 @@
         "cycleDeviationRatio": 2.86,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 47,
+        "potentialScore": 46,
         "stickinessScore": 37
       },
       {
@@ -49604,7 +49606,7 @@
         "cycleDeviationRatio": 2.72,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 44,
+        "potentialScore": 43,
         "stickinessScore": 53
       },
       {
@@ -49620,7 +49622,7 @@
         "cycleDeviationRatio": 60.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 51,
         "stickinessScore": 26
       },
       {
@@ -49652,7 +49654,7 @@
         "cycleDeviationRatio": 3.26,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 33,
+        "potentialScore": 31,
         "stickinessScore": 52
       },
       {
@@ -49668,7 +49670,7 @@
         "cycleDeviationRatio": 33.57,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 28,
         "stickinessScore": 31
       },
       {
@@ -49684,7 +49686,7 @@
         "cycleDeviationRatio": 54.69,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 50,
         "stickinessScore": 32
       },
       {
@@ -49716,7 +49718,7 @@
         "cycleDeviationRatio": 13.73,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 56,
+        "potentialScore": 53,
         "stickinessScore": 39
       },
       {
@@ -49732,7 +49734,7 @@
         "cycleDeviationRatio": 3.19,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 51,
+        "potentialScore": 50,
         "stickinessScore": 44
       },
       {
@@ -49748,7 +49750,7 @@
         "cycleDeviationRatio": 4.87,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 58,
+        "potentialScore": 56,
         "stickinessScore": 47
       },
       {
@@ -49764,7 +49766,7 @@
         "cycleDeviationRatio": 32.71,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 33,
+        "potentialScore": 31,
         "stickinessScore": 31
       },
       {
@@ -49780,7 +49782,7 @@
         "cycleDeviationRatio": 2.47,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 47,
+        "potentialScore": 45,
         "stickinessScore": 51
       },
       {
@@ -49796,7 +49798,7 @@
         "cycleDeviationRatio": 5.3,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 49,
+        "potentialScore": 46,
         "stickinessScore": 50
       },
       {
@@ -49812,7 +49814,7 @@
         "cycleDeviationRatio": 12.6,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 29,
         "stickinessScore": 39
       },
       {
@@ -49828,7 +49830,7 @@
         "cycleDeviationRatio": 12.2,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 29,
         "stickinessScore": 39
       },
       {
@@ -49844,7 +49846,7 @@
         "cycleDeviationRatio": 7.0,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 32,
+        "potentialScore": 28,
         "stickinessScore": 47
       },
       {
@@ -49859,8 +49861,8 @@
         "inactiveDays": 132,
         "cycleDeviationRatio": 132.0,
         "status": "沉默",
-        "quadrant": "潜力待激活",
-        "potentialScore": 50,
+        "quadrant": "普通用户",
+        "potentialScore": 47,
         "stickinessScore": 27
       },
       {
@@ -49876,7 +49878,7 @@
         "cycleDeviationRatio": 19.71,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 25,
         "stickinessScore": 32
       },
       {
@@ -49892,7 +49894,7 @@
         "cycleDeviationRatio": 14.86,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 43,
+        "potentialScore": 40,
         "stickinessScore": 37
       },
       {
@@ -49908,7 +49910,7 @@
         "cycleDeviationRatio": 15.62,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 46,
+        "potentialScore": 45,
         "stickinessScore": 37
       },
       {
@@ -49924,7 +49926,7 @@
         "cycleDeviationRatio": 13.86,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 37,
+        "potentialScore": 34,
         "stickinessScore": 33
       },
       {
@@ -49940,7 +49942,7 @@
         "cycleDeviationRatio": 8.11,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 35,
+        "potentialScore": 32,
         "stickinessScore": 41
       },
       {
@@ -49956,7 +49958,7 @@
         "cycleDeviationRatio": 53.67,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 61,
+        "potentialScore": 57,
         "stickinessScore": 42
       },
       {
@@ -49972,7 +49974,7 @@
         "cycleDeviationRatio": 8.25,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 45,
+        "potentialScore": 44,
         "stickinessScore": 40
       },
       {
@@ -49988,7 +49990,7 @@
         "cycleDeviationRatio": 21.6,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 40,
+        "potentialScore": 36,
         "stickinessScore": 32
       },
       {
@@ -50004,7 +50006,7 @@
         "cycleDeviationRatio": 20.71,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 24,
         "stickinessScore": 32
       },
       {
@@ -50020,7 +50022,7 @@
         "cycleDeviationRatio": 19.43,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 28,
         "stickinessScore": 32
       },
       {
@@ -50036,7 +50038,7 @@
         "cycleDeviationRatio": 17.71,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 25,
         "stickinessScore": 32
       },
       {
@@ -50052,7 +50054,7 @@
         "cycleDeviationRatio": 16.43,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 34,
+        "potentialScore": 31,
         "stickinessScore": 32
       }
     ],
@@ -50070,7 +50072,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 83,
+        "potentialScore": 85,
         "stickinessScore": 41
       },
       {
@@ -50086,7 +50088,7 @@
         "cycleDeviationRatio": 0.54,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 91,
+        "potentialScore": 93,
         "stickinessScore": 75
       },
       {
@@ -50102,7 +50104,7 @@
         "cycleDeviationRatio": 52.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 79,
+        "potentialScore": 82,
         "stickinessScore": 36
       },
       {
@@ -50118,7 +50120,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 79,
+        "potentialScore": 82,
         "stickinessScore": 60
       },
       {
@@ -50134,7 +50136,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 70,
+        "potentialScore": 76,
         "stickinessScore": 46
       },
       {
@@ -50150,7 +50152,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 70,
+        "potentialScore": 75,
         "stickinessScore": 46
       },
       {
@@ -50166,7 +50168,7 @@
         "cycleDeviationRatio": 6.14,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 92,
+        "potentialScore": 91,
         "stickinessScore": 45
       },
       {
@@ -50182,7 +50184,7 @@
         "cycleDeviationRatio": 0.36,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 92,
+        "potentialScore": 91,
         "stickinessScore": 68
       },
       {
@@ -50198,7 +50200,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 96,
+        "potentialScore": 95,
         "stickinessScore": 78
       },
       {
@@ -50214,7 +50216,7 @@
         "cycleDeviationRatio": 0.88,
         "status": "低活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 86,
+        "potentialScore": 88,
         "stickinessScore": 72
       },
       {
@@ -50262,7 +50264,7 @@
         "cycleDeviationRatio": 0.6,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 75,
+        "potentialScore": 78,
         "stickinessScore": 76
       },
       {
@@ -50294,7 +50296,7 @@
         "cycleDeviationRatio": 0.6,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 94,
+        "potentialScore": 93,
         "stickinessScore": 67
       },
       {
@@ -50326,7 +50328,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 65,
+        "potentialScore": 70,
         "stickinessScore": 46
       },
       {
@@ -50342,7 +50344,7 @@
         "cycleDeviationRatio": 0.64,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 78,
+        "potentialScore": 80,
         "stickinessScore": 57
       },
       {
@@ -50374,7 +50376,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 64,
+        "potentialScore": 69,
         "stickinessScore": 46
       },
       {
@@ -50390,7 +50392,7 @@
         "cycleDeviationRatio": 0.91,
         "status": "低活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 76,
+        "potentialScore": 79,
         "stickinessScore": 70
       },
       {
@@ -50406,7 +50408,7 @@
         "cycleDeviationRatio": 2.34,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 89,
+        "potentialScore": 88,
         "stickinessScore": 53
       },
       {
@@ -50422,7 +50424,7 @@
         "cycleDeviationRatio": 0.14,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 74,
+        "potentialScore": 75,
         "stickinessScore": 58
       },
       {
@@ -50438,7 +50440,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 85,
+        "potentialScore": 84,
         "stickinessScore": 73
       },
       {
@@ -50454,7 +50456,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 62,
+        "potentialScore": 66,
         "stickinessScore": 46
       },
       {
@@ -50470,7 +50472,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 61,
+        "potentialScore": 66,
         "stickinessScore": 46
       },
       {
@@ -50486,7 +50488,7 @@
         "cycleDeviationRatio": 0.47,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 61,
+        "potentialScore": 65,
         "stickinessScore": 55
       },
       {
@@ -50502,7 +50504,7 @@
         "cycleDeviationRatio": 0.69,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 69,
+        "potentialScore": 71,
         "stickinessScore": 68
       },
       {
@@ -50518,7 +50520,7 @@
         "cycleDeviationRatio": 0.72,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 82,
+        "potentialScore": 81,
         "stickinessScore": 61
       },
       {
@@ -50534,7 +50536,7 @@
         "cycleDeviationRatio": 0.38,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 79,
+        "potentialScore": 78,
         "stickinessScore": 55
       },
       {
@@ -50550,7 +50552,7 @@
         "cycleDeviationRatio": 0.09,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 70,
+        "potentialScore": 72,
         "stickinessScore": 67
       },
       {
@@ -50566,7 +50568,7 @@
         "cycleDeviationRatio": 0.87,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 59,
+        "potentialScore": 63,
         "stickinessScore": 52
       },
       {
@@ -50582,7 +50584,7 @@
         "cycleDeviationRatio": 3.36,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 81,
+        "potentialScore": 79,
         "stickinessScore": 45
       },
       {
@@ -50598,7 +50600,7 @@
         "cycleDeviationRatio": 0.28,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 80,
+        "potentialScore": 78,
         "stickinessScore": 63
       },
       {
@@ -50614,7 +50616,7 @@
         "cycleDeviationRatio": 0.02,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 69,
+        "potentialScore": 70,
         "stickinessScore": 73
       },
       {
@@ -50646,7 +50648,7 @@
         "cycleDeviationRatio": 0.8,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 76,
+        "potentialScore": 75,
         "stickinessScore": 61
       },
       {
@@ -50662,7 +50664,7 @@
         "cycleDeviationRatio": 7.09,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 76,
+        "potentialScore": 75,
         "stickinessScore": 37
       },
       {
@@ -50694,7 +50696,7 @@
         "cycleDeviationRatio": 0.62,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 76,
+        "potentialScore": 75,
         "stickinessScore": 63
       },
       {
@@ -50726,7 +50728,7 @@
         "cycleDeviationRatio": 1.71,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 63,
+        "potentialScore": 64,
         "stickinessScore": 39
       },
       {
@@ -50758,7 +50760,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 57,
         "stickinessScore": 46
       },
       {
@@ -50774,7 +50776,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 57,
         "stickinessScore": 46
       },
       {
@@ -50790,7 +50792,7 @@
         "cycleDeviationRatio": 0.47,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 53,
+        "potentialScore": 57,
         "stickinessScore": 55
       },
       {
@@ -50806,7 +50808,7 @@
         "cycleDeviationRatio": 0.87,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 52,
+        "potentialScore": 56,
         "stickinessScore": 52
       },
       {
@@ -50822,7 +50824,7 @@
         "cycleDeviationRatio": 0.2,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 52,
+        "potentialScore": 56,
         "stickinessScore": 58
       },
       {
@@ -50838,7 +50840,7 @@
         "cycleDeviationRatio": 0.25,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 60,
+        "potentialScore": 61,
         "stickinessScore": 62
       },
       {
@@ -50854,7 +50856,7 @@
         "cycleDeviationRatio": 21.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 75,
+        "potentialScore": 74,
         "stickinessScore": 38
       },
       {
@@ -50870,7 +50872,7 @@
         "cycleDeviationRatio": 0.37,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 51,
+        "potentialScore": 55,
         "stickinessScore": 56
       },
       {
@@ -50886,7 +50888,7 @@
         "cycleDeviationRatio": 2.57,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 70,
+        "potentialScore": 69,
         "stickinessScore": 43
       },
       {
@@ -50902,7 +50904,7 @@
         "cycleDeviationRatio": 0.19,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 73,
+        "potentialScore": 72,
         "stickinessScore": 75
       },
       {
@@ -50918,7 +50920,7 @@
         "cycleDeviationRatio": 0.35,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 67,
+        "potentialScore": 66,
         "stickinessScore": 66
       },
       {
@@ -50934,7 +50936,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 50,
+        "potentialScore": 53,
         "stickinessScore": 46
       },
       {
@@ -50950,7 +50952,7 @@
         "cycleDeviationRatio": 0.25,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 84,
+        "potentialScore": 83,
         "stickinessScore": 70
       },
       {
@@ -50966,7 +50968,7 @@
         "cycleDeviationRatio": 0.14,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 58,
+        "potentialScore": 59,
         "stickinessScore": 58
       },
       {
@@ -50982,7 +50984,7 @@
         "cycleDeviationRatio": 1.47,
         "status": "低活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 77,
+        "potentialScore": 75,
         "stickinessScore": 56
       },
       {
@@ -50998,7 +51000,7 @@
         "cycleDeviationRatio": 2.53,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 59,
+        "potentialScore": 61,
         "stickinessScore": 47
       },
       {
@@ -51030,7 +51032,7 @@
         "cycleDeviationRatio": 4.61,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 73,
+        "potentialScore": 71,
         "stickinessScore": 42
       },
       {
@@ -51046,7 +51048,7 @@
         "cycleDeviationRatio": 0.49,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 66,
+        "potentialScore": 65,
         "stickinessScore": 57
       },
       {
@@ -51061,8 +51063,8 @@
         "inactiveDays": 84,
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
-        "quadrant": "普通用户",
-        "potentialScore": 48,
+        "quadrant": "潜力待激活",
+        "potentialScore": 50,
         "stickinessScore": 46
       },
       {
@@ -51078,7 +51080,7 @@
         "cycleDeviationRatio": 2.73,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 68,
+        "potentialScore": 67,
         "stickinessScore": 42
       },
       {
@@ -51094,7 +51096,7 @@
         "cycleDeviationRatio": 0.56,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 64,
+        "potentialScore": 63,
         "stickinessScore": 64
       },
       {
@@ -51110,7 +51112,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 47,
+        "potentialScore": 49,
         "stickinessScore": 46
       },
       {
@@ -51126,7 +51128,7 @@
         "cycleDeviationRatio": 0.6,
         "status": "活跃",
         "quadrant": "稳定型用户",
-        "potentialScore": 47,
+        "potentialScore": 49,
         "stickinessScore": 54
       },
       {
@@ -51142,7 +51144,7 @@
         "cycleDeviationRatio": 0.37,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 58,
+        "potentialScore": 57,
         "stickinessScore": 71
       },
       {
@@ -51158,7 +51160,7 @@
         "cycleDeviationRatio": 1.67,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 68,
+        "potentialScore": 66,
         "stickinessScore": 48
       },
       {
@@ -51174,7 +51176,7 @@
         "cycleDeviationRatio": 0.05,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 65,
+        "potentialScore": 62,
         "stickinessScore": 72
       },
       {
@@ -51190,7 +51192,7 @@
         "cycleDeviationRatio": 1.53,
         "status": "低活跃",
         "quadrant": "潜力待激活",
-        "potentialScore": 59,
+        "potentialScore": 58,
         "stickinessScore": 43
       },
       {
@@ -51206,7 +51208,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 44,
+        "potentialScore": 47,
         "stickinessScore": 46
       },
       {
@@ -51238,7 +51240,7 @@
         "cycleDeviationRatio": 9.71,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 59,
+        "potentialScore": 57,
         "stickinessScore": 34
       },
       {
@@ -51254,7 +51256,7 @@
         "cycleDeviationRatio": 0.38,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 57,
+        "potentialScore": 56,
         "stickinessScore": 67
       },
       {
@@ -51286,7 +51288,7 @@
         "cycleDeviationRatio": 4.21,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 53,
         "stickinessScore": 45
       },
       {
@@ -51302,7 +51304,7 @@
         "cycleDeviationRatio": 0.48,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 65,
+        "potentialScore": 62,
         "stickinessScore": 69
       },
       {
@@ -51334,7 +51336,7 @@
         "cycleDeviationRatio": 0.2,
         "status": "活跃",
         "quadrant": "稳定型用户",
-        "potentialScore": 42,
+        "potentialScore": 44,
         "stickinessScore": 58
       },
       {
@@ -51350,7 +51352,7 @@
         "cycleDeviationRatio": 0.13,
         "status": "活跃",
         "quadrant": "稳定型用户",
-        "potentialScore": 42,
+        "potentialScore": 44,
         "stickinessScore": 58
       },
       {
@@ -51382,7 +51384,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 41,
+        "potentialScore": 43,
         "stickinessScore": 46
       },
       {
@@ -51398,7 +51400,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "正常",
         "quadrant": "普通用户",
-        "potentialScore": 41,
+        "potentialScore": 43,
         "stickinessScore": 46
       },
       {
@@ -51414,7 +51416,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 40,
+        "potentialScore": 43,
         "stickinessScore": 46
       },
       {
@@ -51430,7 +51432,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 39,
+        "potentialScore": 40,
         "stickinessScore": 46
       },
       {
@@ -51446,7 +51448,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 38,
+        "potentialScore": 40,
         "stickinessScore": 46
       },
       {
@@ -51462,7 +51464,7 @@
         "cycleDeviationRatio": 0.89,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 61,
+        "potentialScore": 59,
         "stickinessScore": 65
       },
       {
@@ -51478,7 +51480,7 @@
         "cycleDeviationRatio": 0.33,
         "status": "活跃",
         "quadrant": "稳定型用户",
-        "potentialScore": 37,
+        "potentialScore": 39,
         "stickinessScore": 57
       },
       {
@@ -51510,7 +51512,7 @@
         "cycleDeviationRatio": 9.43,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 45,
+        "potentialScore": 44,
         "stickinessScore": 34
       },
       {
@@ -51526,7 +51528,7 @@
         "cycleDeviationRatio": 2.86,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 47,
+        "potentialScore": 46,
         "stickinessScore": 37
       },
       {
@@ -51542,7 +51544,7 @@
         "cycleDeviationRatio": 2.72,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 44,
+        "potentialScore": 43,
         "stickinessScore": 53
       },
       {
@@ -51558,7 +51560,7 @@
         "cycleDeviationRatio": 0.17,
         "status": "活跃",
         "quadrant": "稳定型用户",
-        "potentialScore": 35,
+        "potentialScore": 37,
         "stickinessScore": 58
       },
       {
@@ -51606,7 +51608,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 33,
+        "potentialScore": 34,
         "stickinessScore": 46
       },
       {
@@ -51622,7 +51624,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 32,
         "stickinessScore": 46
       },
       {
@@ -51638,7 +51640,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 30,
+        "potentialScore": 31,
         "stickinessScore": 46
       },
       {
@@ -51654,7 +51656,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 30,
+        "potentialScore": 31,
         "stickinessScore": 46
       },
       {
@@ -51686,7 +51688,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 28,
+        "potentialScore": 29,
         "stickinessScore": 46
       },
       {
@@ -51718,7 +51720,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "正常",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 28,
         "stickinessScore": 46
       },
       {
@@ -51734,7 +51736,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 28,
         "stickinessScore": 46
       },
       {
@@ -51766,7 +51768,7 @@
         "cycleDeviationRatio": 0.0,
         "status": "活跃",
         "quadrant": "稳定型用户",
-        "potentialScore": 26,
+        "potentialScore": 27,
         "stickinessScore": 60
       }
     ],
@@ -51784,7 +51786,7 @@
         "cycleDeviationRatio": 0.78,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 82,
+        "potentialScore": 81,
         "stickinessScore": 72
       },
       {
@@ -51800,7 +51802,7 @@
         "cycleDeviationRatio": 0.99,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 77,
+        "potentialScore": 76,
         "stickinessScore": 69
       },
       {
@@ -51816,7 +51818,7 @@
         "cycleDeviationRatio": 0.89,
         "status": "活跃",
         "quadrant": "核心采购用户",
-        "potentialScore": 74,
+        "potentialScore": 73,
         "stickinessScore": 70
       },
       {
@@ -51832,7 +51834,7 @@
         "cycleDeviationRatio": 1.09,
         "status": "回流",
         "quadrant": "潜力待激活",
-        "potentialScore": 72,
+        "potentialScore": 70,
         "stickinessScore": 47
       },
       {
@@ -51848,7 +51850,7 @@
         "cycleDeviationRatio": 4.36,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 68,
+        "potentialScore": 65,
         "stickinessScore": 49
       },
       {
@@ -51864,7 +51866,7 @@
         "cycleDeviationRatio": 2.38,
         "status": "沉默",
         "quadrant": "核心采购用户",
-        "potentialScore": 59,
+        "potentialScore": 56,
         "stickinessScore": 55
       },
       {
@@ -51880,7 +51882,7 @@
         "cycleDeviationRatio": 60.0,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 51,
         "stickinessScore": 26
       },
       {
@@ -51896,7 +51898,7 @@
         "cycleDeviationRatio": 0.05,
         "status": "回流",
         "quadrant": "稳定型用户",
-        "potentialScore": 41,
+        "potentialScore": 39,
         "stickinessScore": 70
       },
       {
@@ -51912,7 +51914,7 @@
         "cycleDeviationRatio": 3.26,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 33,
+        "potentialScore": 31,
         "stickinessScore": 52
       },
       {
@@ -51928,7 +51930,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 15,
+        "potentialScore": 14,
         "stickinessScore": 46
       },
       {
@@ -51944,7 +51946,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 15,
+        "potentialScore": 14,
         "stickinessScore": 46
       },
       {
@@ -51960,7 +51962,7 @@
         "cycleDeviationRatio": 54.69,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 54,
+        "potentialScore": 50,
         "stickinessScore": 32
       },
       {
@@ -52008,7 +52010,7 @@
         "cycleDeviationRatio": 13.73,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 56,
+        "potentialScore": 53,
         "stickinessScore": 39
       },
       {
@@ -52024,7 +52026,7 @@
         "cycleDeviationRatio": 3.19,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 51,
+        "potentialScore": 50,
         "stickinessScore": 44
       },
       {
@@ -52040,7 +52042,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 17,
+        "potentialScore": 16,
         "stickinessScore": 46
       },
       {
@@ -52104,7 +52106,7 @@
         "cycleDeviationRatio": 4.87,
         "status": "沉默",
         "quadrant": "潜力待激活",
-        "potentialScore": 58,
+        "potentialScore": 56,
         "stickinessScore": 47
       },
       {
@@ -52120,7 +52122,7 @@
         "cycleDeviationRatio": 2.47,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 47,
+        "potentialScore": 45,
         "stickinessScore": 51
       },
       {
@@ -52136,7 +52138,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 18,
+        "potentialScore": 17,
         "stickinessScore": 46
       },
       {
@@ -52152,7 +52154,7 @@
         "cycleDeviationRatio": 5.3,
         "status": "沉默",
         "quadrant": "稳定型用户",
-        "potentialScore": 49,
+        "potentialScore": 46,
         "stickinessScore": 50
       },
       {
@@ -52184,7 +52186,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 13,
+        "potentialScore": 12,
         "stickinessScore": 46
       },
       {
@@ -52216,7 +52218,7 @@
         "cycleDeviationRatio": 12.6,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 29,
         "stickinessScore": 39
       },
       {
@@ -52248,7 +52250,7 @@
         "cycleDeviationRatio": 12.2,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 29,
         "stickinessScore": 39
       },
       {
@@ -52264,7 +52266,7 @@
         "cycleDeviationRatio": 7.0,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 32,
+        "potentialScore": 28,
         "stickinessScore": 47
       },
       {
@@ -52279,8 +52281,8 @@
         "inactiveDays": 132,
         "cycleDeviationRatio": 132.0,
         "status": "沉默",
-        "quadrant": "潜力待激活",
-        "potentialScore": 50,
+        "quadrant": "普通用户",
+        "potentialScore": 47,
         "stickinessScore": 27
       },
       {
@@ -52296,7 +52298,7 @@
         "cycleDeviationRatio": 19.71,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 25,
         "stickinessScore": 32
       },
       {
@@ -52328,7 +52330,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 33,
+        "potentialScore": 34,
         "stickinessScore": 46
       },
       {
@@ -52344,7 +52346,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 33,
         "stickinessScore": 46
       },
       {
@@ -52360,7 +52362,7 @@
         "cycleDeviationRatio": 13.86,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 37,
+        "potentialScore": 34,
         "stickinessScore": 33
       },
       {
@@ -52376,7 +52378,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 26,
+        "potentialScore": 27,
         "stickinessScore": 46
       },
       {
@@ -52392,7 +52394,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 37,
+        "potentialScore": 38,
         "stickinessScore": 46
       },
       {
@@ -52408,7 +52410,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 24,
+        "potentialScore": 25,
         "stickinessScore": 46
       },
       {
@@ -52424,7 +52426,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 14,
+        "potentialScore": 13,
         "stickinessScore": 46
       },
       {
@@ -52440,7 +52442,7 @@
         "cycleDeviationRatio": 8.25,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 45,
+        "potentialScore": 44,
         "stickinessScore": 40
       },
       {
@@ -52456,7 +52458,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 37,
+        "potentialScore": 39,
         "stickinessScore": 46
       },
       {
@@ -52472,7 +52474,7 @@
         "cycleDeviationRatio": 21.6,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 40,
+        "potentialScore": 36,
         "stickinessScore": 32
       },
       {
@@ -52520,7 +52522,7 @@
         "cycleDeviationRatio": 20.71,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 24,
         "stickinessScore": 32
       },
       {
@@ -52536,7 +52538,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 18,
+        "potentialScore": 17,
         "stickinessScore": 46
       },
       {
@@ -52552,7 +52554,7 @@
         "cycleDeviationRatio": 19.43,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 28,
         "stickinessScore": 32
       },
       {
@@ -52584,7 +52586,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 31,
+        "potentialScore": 32,
         "stickinessScore": 46
       },
       {
@@ -52600,7 +52602,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 19,
+        "potentialScore": 18,
         "stickinessScore": 46
       },
       {
@@ -52616,7 +52618,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 16,
+        "potentialScore": 15,
         "stickinessScore": 46
       },
       {
@@ -52632,7 +52634,7 @@
         "cycleDeviationRatio": 17.71,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 27,
+        "potentialScore": 25,
         "stickinessScore": 32
       },
       {
@@ -52664,7 +52666,7 @@
         "cycleDeviationRatio": 16.43,
         "status": "沉默",
         "quadrant": "普通用户",
-        "potentialScore": 34,
+        "potentialScore": 31,
         "stickinessScore": 32
       },
       {
@@ -52680,7 +52682,7 @@
         "cycleDeviationRatio": 1.0,
         "status": "低活跃",
         "quadrant": "普通用户",
-        "potentialScore": 15,
+        "potentialScore": 14,
         "stickinessScore": 46
       }
     ],
@@ -52698,7 +52700,7 @@
         "cycleDeviationRatio": 0.1,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 80,
+        "potentialScore": 81,
         "stickinessScore": 73
       },
       {
@@ -52730,7 +52732,7 @@
         "cycleDeviationRatio": 0.78,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 82,
+        "potentialScore": 81,
         "stickinessScore": 72
       },
       {
@@ -52746,7 +52748,7 @@
         "cycleDeviationRatio": 0.02,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 69,
+        "potentialScore": 70,
         "stickinessScore": 73
       },
       {
@@ -52762,7 +52764,7 @@
         "cycleDeviationRatio": 1.09,
         "status": "回流",
         "quadrant": "潜力待激活",
-        "potentialScore": 72,
+        "potentialScore": 70,
         "stickinessScore": 47
       },
       {
@@ -52794,7 +52796,7 @@
         "cycleDeviationRatio": 0.89,
         "status": "回流",
         "quadrant": "核心采购用户",
-        "potentialScore": 61,
+        "potentialScore": 59,
         "stickinessScore": 65
       },
       {
@@ -52826,7 +52828,7 @@
         "cycleDeviationRatio": 0.05,
         "status": "回流",
         "quadrant": "稳定型用户",
-        "potentialScore": 41,
+        "potentialScore": 39,
         "stickinessScore": 70
       }
     ]
@@ -52845,7 +52847,7 @@
       "firstOrder": "2026-07-30",
       "lastOrder": "2026-07-31",
       "ecShare": 1.0,
-      "potentialScore": 79,
+      "potentialScore": 82,
       "stickinessScore": 36,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -52949,7 +52951,7 @@
       "firstOrder": "2026-05-22",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 15,
+      "potentialScore": 14,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -53026,7 +53028,7 @@
       "firstOrder": "2026-01-28",
       "lastOrder": "2026-01-28",
       "ecShare": 1.0,
-      "potentialScore": 18,
+      "potentialScore": 17,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -53178,7 +53180,7 @@
       "firstOrder": "2026-01-29",
       "lastOrder": "2026-01-29",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 28,
       "stickinessScore": 31,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -53286,7 +53288,7 @@
       "firstOrder": "2026-04-20",
       "lastOrder": "2026-04-20",
       "ecShare": 1.0,
-      "potentialScore": 15,
+      "potentialScore": 14,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -53802,7 +53804,7 @@
       "firstOrder": "2026-04-23",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 54,
+      "potentialScore": 50,
       "stickinessScore": 32,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -54520,7 +54522,7 @@
       "firstOrder": "2026-09-21",
       "lastOrder": "2026-09-21",
       "ecShare": 0.0,
-      "potentialScore": 79,
+      "potentialScore": 82,
       "stickinessScore": 60,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -54618,7 +54620,7 @@
       "firstOrder": "2026-03-19",
       "lastOrder": "2026-03-19",
       "ecShare": 0.0,
-      "potentialScore": 44,
+      "potentialScore": 47,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -54738,7 +54740,7 @@
       "firstOrder": "2026-02-04",
       "lastOrder": "2026-09-18",
       "ecShare": 0.4022,
-      "potentialScore": 84,
+      "potentialScore": 83,
       "stickinessScore": 70,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -55862,7 +55864,7 @@
       "firstOrder": "2026-01-28",
       "lastOrder": "2026-07-16",
       "ecShare": 1.0,
-      "potentialScore": 68,
+      "potentialScore": 65,
       "stickinessScore": 49,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -56244,7 +56246,7 @@
       "firstOrder": "2026-01-30",
       "lastOrder": "2026-09-11",
       "ecShare": 1.0,
-      "potentialScore": 76,
+      "potentialScore": 75,
       "stickinessScore": 63,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -57387,7 +57389,7 @@
       "firstOrder": "2026-02-27",
       "lastOrder": "2026-04-23",
       "ecShare": 0.5642,
-      "potentialScore": 56,
+      "potentialScore": 53,
       "stickinessScore": 39,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -57720,7 +57722,7 @@
       "firstOrder": "2026-02-02",
       "lastOrder": "2026-05-25",
       "ecShare": 1.0,
-      "potentialScore": 51,
+      "potentialScore": 50,
       "stickinessScore": 44,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -57862,7 +57864,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 17,
+      "potentialScore": 16,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -58169,7 +58171,7 @@
       "firstOrder": "2026-08-04",
       "lastOrder": "2026-08-04",
       "ecShare": 1.0,
-      "potentialScore": 41,
+      "potentialScore": 43,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -58245,7 +58247,7 @@
       "firstOrder": "2026-05-21",
       "lastOrder": "2026-09-09",
       "ecShare": 0.0191,
-      "potentialScore": 91,
+      "potentialScore": 93,
       "stickinessScore": 75,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -58894,7 +58896,7 @@
       "firstOrder": "2026-07-31",
       "lastOrder": "2026-07-31",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 28,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -58971,7 +58973,7 @@
       "firstOrder": "2026-06-15",
       "lastOrder": "2026-09-18",
       "ecShare": 1.0,
-      "potentialScore": 73,
+      "potentialScore": 72,
       "stickinessScore": 75,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -59757,7 +59759,7 @@
       "firstOrder": "2026-01-30",
       "lastOrder": "2026-06-17",
       "ecShare": 0.2851,
-      "potentialScore": 58,
+      "potentialScore": 56,
       "stickinessScore": 47,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -60044,7 +60046,7 @@
       "firstOrder": "2026-07-03",
       "lastOrder": "2026-08-25",
       "ecShare": 1.0,
-      "potentialScore": 59,
+      "potentialScore": 58,
       "stickinessScore": 43,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -60181,7 +60183,7 @@
       "firstOrder": "2026-02-02",
       "lastOrder": "2026-06-26",
       "ecShare": 0.0028,
-      "potentialScore": 75,
+      "potentialScore": 78,
       "stickinessScore": 76,
       "quadrant": "核心采购用户",
       "status": "沉默",
@@ -60319,7 +60321,7 @@
       "firstOrder": "2026-01-21",
       "lastOrder": "2026-09-20",
       "ecShare": 0.8729,
-      "potentialScore": 92,
+      "potentialScore": 91,
       "stickinessScore": 68,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -62317,7 +62319,7 @@
       "firstOrder": "2026-09-20",
       "lastOrder": "2026-09-20",
       "ecShare": 1.0,
-      "potentialScore": 58,
+      "potentialScore": 59,
       "stickinessScore": 58,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -62419,7 +62421,7 @@
       "firstOrder": "2026-08-27",
       "lastOrder": "2026-09-20",
       "ecShare": 0.7553,
-      "potentialScore": 79,
+      "potentialScore": 78,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -62872,7 +62874,7 @@
       "firstOrder": "2026-09-20",
       "lastOrder": "2026-09-20",
       "ecShare": 0.8621,
-      "potentialScore": 74,
+      "potentialScore": 75,
       "stickinessScore": 58,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -63050,7 +63052,7 @@
       "firstOrder": "2026-09-11",
       "lastOrder": "2026-09-11",
       "ecShare": 1.0,
-      "potentialScore": 37,
+      "potentialScore": 39,
       "stickinessScore": 57,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -63403,7 +63405,7 @@
       "firstOrder": "2026-01-26",
       "lastOrder": "2026-09-11",
       "ecShare": 1.0,
-      "potentialScore": 77,
+      "potentialScore": 75,
       "stickinessScore": 56,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -64305,7 +64307,7 @@
       "firstOrder": "2026-02-10",
       "lastOrder": "2026-09-20",
       "ecShare": 1.0,
-      "potentialScore": 65,
+      "potentialScore": 62,
       "stickinessScore": 72,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -64618,7 +64620,7 @@
       "firstOrder": "2026-02-10",
       "lastOrder": "2026-09-17",
       "ecShare": 1.0,
-      "potentialScore": 82,
+      "potentialScore": 80,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -65156,7 +65158,7 @@
       "firstOrder": "2026-02-04",
       "lastOrder": "2026-02-04",
       "ecShare": 1.0,
-      "potentialScore": 33,
+      "potentialScore": 31,
       "stickinessScore": 31,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -65366,7 +65368,7 @@
       "firstOrder": "2026-02-05",
       "lastOrder": "2026-06-10",
       "ecShare": 1.0,
-      "potentialScore": 47,
+      "potentialScore": 45,
       "stickinessScore": 51,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -65586,7 +65588,7 @@
       "firstOrder": "2026-08-04",
       "lastOrder": "2026-08-04",
       "ecShare": 0.0,
-      "potentialScore": 65,
+      "potentialScore": 70,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -65599,6 +65601,7 @@
       "amt3m": 29880.0,
       "amt12m": 29880.0,
       "tags": [
+        "高潜力",
         "无明显规律",
         "快速增长"
       ],
@@ -65662,7 +65665,7 @@
       "firstOrder": "2026-08-11",
       "lastOrder": "2026-08-11",
       "ecShare": 0.0,
-      "potentialScore": 62,
+      "potentialScore": 66,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -65738,7 +65741,7 @@
       "firstOrder": "2026-05-19",
       "lastOrder": "2026-05-19",
       "ecShare": 1.0,
-      "potentialScore": 18,
+      "potentialScore": 17,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -65815,7 +65818,7 @@
       "firstOrder": "2026-01-27",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 49,
+      "potentialScore": 46,
       "stickinessScore": 50,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -65987,7 +65990,7 @@
       "firstOrder": "2026-07-09",
       "lastOrder": "2026-07-09",
       "ecShare": 1.0,
-      "potentialScore": 40,
+      "potentialScore": 43,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -66140,7 +66143,7 @@
       "firstOrder": "2026-05-27",
       "lastOrder": "2026-05-27",
       "ecShare": 1.0,
-      "potentialScore": 13,
+      "potentialScore": 12,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -66217,7 +66220,7 @@
       "firstOrder": "2026-03-17",
       "lastOrder": "2026-03-17",
       "ecShare": 1.0,
-      "potentialScore": 17,
+      "potentialScore": 16,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -66370,7 +66373,7 @@
       "firstOrder": "2026-05-08",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 29,
       "stickinessScore": 39,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -66463,7 +66466,7 @@
       "firstOrder": "2026-09-16",
       "lastOrder": "2026-09-16",
       "ecShare": 1.0,
-      "potentialScore": 35,
+      "potentialScore": 37,
       "stickinessScore": 58,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -66476,7 +66479,6 @@
       "amt3m": 203.88,
       "amt12m": 203.88,
       "tags": [
-        "普通潜力",
         "无明显规律",
         "快速增长"
       ],
@@ -66581,7 +66583,7 @@
       "firstOrder": "2026-04-07",
       "lastOrder": "2026-07-24",
       "ecShare": 1.0,
-      "potentialScore": 68,
+      "potentialScore": 67,
       "stickinessScore": 42,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -66841,7 +66843,7 @@
       "firstOrder": "2026-09-17",
       "lastOrder": "2026-09-17",
       "ecShare": 1.0,
-      "potentialScore": 42,
+      "potentialScore": 44,
       "stickinessScore": 58,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -66938,7 +66940,7 @@
       "firstOrder": "2026-02-05",
       "lastOrder": "2026-08-25",
       "ecShare": 1.0,
-      "potentialScore": 81,
+      "potentialScore": 79,
       "stickinessScore": 45,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -67637,7 +67639,7 @@
       "firstOrder": "2026-07-06",
       "lastOrder": "2026-07-06",
       "ecShare": 1.0,
-      "potentialScore": 38,
+      "potentialScore": 40,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -67713,7 +67715,7 @@
       "firstOrder": "2026-06-26",
       "lastOrder": "2026-09-16",
       "ecShare": 1.0,
-      "potentialScore": 66,
+      "potentialScore": 65,
       "stickinessScore": 57,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -68030,7 +68032,7 @@
       "firstOrder": "2026-05-12",
       "lastOrder": "2026-05-22",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 29,
       "stickinessScore": 39,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -68123,7 +68125,7 @@
       "firstOrder": "2026-07-20",
       "lastOrder": "2026-09-14",
       "ecShare": 1.0,
-      "potentialScore": 57,
+      "potentialScore": 56,
       "stickinessScore": 67,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -68275,7 +68277,7 @@
       "firstOrder": "2026-08-19",
       "lastOrder": "2026-09-18",
       "ecShare": 1.0,
-      "potentialScore": 76,
+      "potentialScore": 75,
       "stickinessScore": 61,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -69533,7 +69535,7 @@
       "firstOrder": "2026-07-24",
       "lastOrder": "2026-08-26",
       "ecShare": 1.0,
-      "potentialScore": 76,
+      "potentialScore": 75,
       "stickinessScore": 37,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -70117,7 +70119,7 @@
       "firstOrder": "2026-05-20",
       "lastOrder": "2026-08-25",
       "ecShare": 0.3052,
-      "potentialScore": 68,
+      "potentialScore": 66,
       "stickinessScore": 48,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -71171,7 +71173,7 @@
       "firstOrder": "2026-07-23",
       "lastOrder": "2026-07-23",
       "ecShare": 0.0,
-      "potentialScore": 54,
+      "potentialScore": 57,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -71247,7 +71249,7 @@
       "firstOrder": "2026-03-25",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 32,
+      "potentialScore": 28,
       "stickinessScore": 47,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -71380,7 +71382,7 @@
       "firstOrder": "2026-07-02",
       "lastOrder": "2026-07-02",
       "ecShare": 1.0,
-      "potentialScore": 28,
+      "potentialScore": 29,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -71534,7 +71536,7 @@
       "firstOrder": "2026-04-23",
       "lastOrder": "2026-09-17",
       "ecShare": 1.0,
-      "potentialScore": 41,
+      "potentialScore": 39,
       "stickinessScore": 70,
       "quadrant": "稳定型用户",
       "status": "回流",
@@ -71717,7 +71719,7 @@
       "firstOrder": "2026-03-11",
       "lastOrder": "2026-09-18",
       "ecShare": 1.0,
-      "potentialScore": 94,
+      "potentialScore": 93,
       "stickinessScore": 67,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -73200,7 +73202,7 @@
       "firstOrder": "2026-06-29",
       "lastOrder": "2026-06-29",
       "ecShare": 1.0,
-      "potentialScore": 30,
+      "potentialScore": 31,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -73277,9 +73279,9 @@
       "firstOrder": "2026-05-08",
       "lastOrder": "2026-05-12",
       "ecShare": 1.0,
-      "potentialScore": 50,
+      "potentialScore": 47,
       "stickinessScore": 27,
-      "quadrant": "潜力待激活",
+      "quadrant": "普通用户",
       "status": "沉默",
       "regularity": "较规律",
       "avgCycleDays": 1.0,
@@ -73425,7 +73427,7 @@
       "firstOrder": "2026-09-07",
       "lastOrder": "2026-09-07",
       "ecShare": 1.0,
-      "potentialScore": 61,
+      "potentialScore": 65,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -73577,7 +73579,7 @@
       "firstOrder": "2026-08-04",
       "lastOrder": "2026-08-04",
       "ecShare": 1.0,
-      "potentialScore": 70,
+      "potentialScore": 75,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -73695,7 +73697,7 @@
       "firstOrder": "2026-05-06",
       "lastOrder": "2026-05-06",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 25,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -73866,7 +73868,7 @@
       "firstOrder": "2026-06-16",
       "lastOrder": "2026-06-16",
       "ecShare": 0.0,
-      "potentialScore": 33,
+      "potentialScore": 34,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -73943,7 +73945,7 @@
       "firstOrder": "2026-07-24",
       "lastOrder": "2026-07-24",
       "ecShare": 0.0,
-      "potentialScore": 50,
+      "potentialScore": 53,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -74025,7 +74027,7 @@
       "firstOrder": "2026-04-21",
       "lastOrder": "2026-04-21",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 33,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -74117,7 +74119,7 @@
       "firstOrder": "2026-02-02",
       "lastOrder": "2026-03-23",
       "ecShare": 1.0,
-      "potentialScore": 43,
+      "potentialScore": 40,
       "stickinessScore": 37,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -74410,7 +74412,7 @@
       "firstOrder": "2026-02-04",
       "lastOrder": "2026-03-02",
       "ecShare": 1.0,
-      "potentialScore": 46,
+      "potentialScore": 45,
       "stickinessScore": 37,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -74532,7 +74534,7 @@
       "firstOrder": "2026-01-23",
       "lastOrder": "2026-09-11",
       "ecShare": 0.1817,
-      "potentialScore": 82,
+      "potentialScore": 81,
       "stickinessScore": 72,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -75321,7 +75323,7 @@
       "firstOrder": "2026-03-12",
       "lastOrder": "2026-08-03",
       "ecShare": 1.0,
-      "potentialScore": 59,
+      "potentialScore": 56,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "沉默",
@@ -75544,7 +75546,7 @@
       "firstOrder": "2026-07-15",
       "lastOrder": "2026-08-14",
       "ecShare": 1.0,
-      "potentialScore": 59,
+      "potentialScore": 61,
       "stickinessScore": 47,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -75657,7 +75659,7 @@
       "firstOrder": "2026-08-14",
       "lastOrder": "2026-08-14",
       "ecShare": 1.0,
-      "potentialScore": 39,
+      "potentialScore": 40,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -75739,7 +75741,7 @@
       "firstOrder": "2026-07-28",
       "lastOrder": "2026-07-28",
       "ecShare": 1.0,
-      "potentialScore": 30,
+      "potentialScore": 31,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -75816,7 +75818,7 @@
       "firstOrder": "2026-06-11",
       "lastOrder": "2026-06-23",
       "ecShare": 1.0,
-      "potentialScore": 54,
+      "potentialScore": 51,
       "stickinessScore": 26,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -76804,7 +76806,7 @@
       "firstOrder": "2026-03-18",
       "lastOrder": "2026-08-31",
       "ecShare": 1.0,
-      "potentialScore": 61,
+      "potentialScore": 59,
       "stickinessScore": 65,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -77006,7 +77008,7 @@
       "firstOrder": "2026-06-16",
       "lastOrder": "2026-06-16",
       "ecShare": 1.0,
-      "potentialScore": 37,
+      "potentialScore": 34,
       "stickinessScore": 33,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -77019,6 +77021,7 @@
       "amt3m": 0.0,
       "amt12m": 639.74,
       "tags": [
+        "普通潜力",
         "低粘性",
         "规律型",
         "采购下降",
@@ -77235,7 +77238,7 @@
       "firstOrder": "2026-02-05",
       "lastOrder": "2026-02-05",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 32,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -77326,7 +77329,7 @@
       "firstOrder": "2026-08-11",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0,
-      "potentialScore": 82,
+      "potentialScore": 81,
       "stickinessScore": 61,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -77889,7 +77892,7 @@
       "firstOrder": "2026-01-29",
       "lastOrder": "2026-01-29",
       "ecShare": 0.0,
-      "potentialScore": 23,
+      "potentialScore": 24,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -77965,7 +77968,7 @@
       "firstOrder": "2025-08-28",
       "lastOrder": "2025-12-11",
       "ecShare": 0.2716,
-      "potentialScore": 35,
+      "potentialScore": 32,
       "stickinessScore": 41,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -78097,7 +78100,7 @@
       "firstOrder": "2026-06-30",
       "lastOrder": "2026-09-08",
       "ecShare": 0.0,
-      "potentialScore": 58,
+      "potentialScore": 57,
       "stickinessScore": 71,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -78500,7 +78503,7 @@
       "firstOrder": "2026-07-31",
       "lastOrder": "2026-07-31",
       "ecShare": 0.0,
-      "potentialScore": 64,
+      "potentialScore": 69,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -78576,7 +78579,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 0.0,
-      "potentialScore": 26,
+      "potentialScore": 27,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -79780,7 +79783,7 @@
       "firstOrder": "2026-05-15",
       "lastOrder": "2026-05-15",
       "ecShare": 0.0,
-      "potentialScore": 37,
+      "potentialScore": 38,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -79856,7 +79859,7 @@
       "firstOrder": "2026-06-30",
       "lastOrder": "2026-06-30",
       "ecShare": 0.0,
-      "potentialScore": 61,
+      "potentialScore": 66,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -79932,7 +79935,7 @@
       "firstOrder": "2026-08-18",
       "lastOrder": "2026-09-15",
       "ecShare": 1.0,
-      "potentialScore": 78,
+      "potentialScore": 80,
       "stickinessScore": 57,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -80090,7 +80093,7 @@
       "firstOrder": "2026-06-08",
       "lastOrder": "2026-08-21",
       "ecShare": 1.0,
-      "potentialScore": 73,
+      "potentialScore": 71,
       "stickinessScore": 42,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -80619,7 +80622,7 @@
       "firstOrder": "2026-09-16",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0,
-      "potentialScore": 60,
+      "potentialScore": 61,
       "stickinessScore": 62,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -80771,7 +80774,7 @@
       "firstOrder": "2025-12-15",
       "lastOrder": "2026-03-09",
       "ecShare": 1.0,
-      "potentialScore": 61,
+      "potentialScore": 57,
       "stickinessScore": 42,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -81827,7 +81830,7 @@
       "firstOrder": "2026-06-18",
       "lastOrder": "2026-09-18",
       "ecShare": 0.0,
-      "potentialScore": 80,
+      "potentialScore": 81,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -82698,7 +82701,7 @@
       "firstOrder": "2026-08-03",
       "lastOrder": "2026-08-03",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 32,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -82781,7 +82784,7 @@
       "firstOrder": "2026-03-31",
       "lastOrder": "2026-03-31",
       "ecShare": 1.0,
-      "potentialScore": 24,
+      "potentialScore": 25,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -82858,7 +82861,7 @@
       "firstOrder": "2026-08-25",
       "lastOrder": "2026-09-10",
       "ecShare": 0.0,
-      "potentialScore": 69,
+      "potentialScore": 71,
       "stickinessScore": 68,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -82871,6 +82874,7 @@
       "amt3m": 12375.0,
       "amt12m": 12375.0,
       "tags": [
+        "高潜力",
         "规律型",
         "快速增长"
       ],
@@ -82985,7 +82989,7 @@
       "firstOrder": "2026-05-12",
       "lastOrder": "2026-05-12",
       "ecShare": 1.0,
-      "potentialScore": 14,
+      "potentialScore": 13,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -83062,7 +83066,7 @@
       "firstOrder": "2026-04-10",
       "lastOrder": "2026-05-12",
       "ecShare": 0.2242,
-      "potentialScore": 45,
+      "potentialScore": 44,
       "stickinessScore": 40,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -83184,7 +83188,7 @@
       "firstOrder": "2026-04-27",
       "lastOrder": "2026-04-27",
       "ecShare": 0.0,
-      "potentialScore": 37,
+      "potentialScore": 39,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -83260,7 +83264,7 @@
       "firstOrder": "2026-06-02",
       "lastOrder": "2026-07-30",
       "ecShare": 0.0,
-      "potentialScore": 76,
+      "potentialScore": 79,
       "stickinessScore": 70,
       "quadrant": "核心采购用户",
       "status": "低活跃",
@@ -83558,7 +83562,7 @@
       "firstOrder": "2026-06-26",
       "lastOrder": "2026-09-20",
       "ecShare": 0.711,
-      "potentialScore": 80,
+      "potentialScore": 78,
       "stickinessScore": 63,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -84572,7 +84576,7 @@
       "firstOrder": "2026-06-29",
       "lastOrder": "2026-06-29",
       "ecShare": 1.0,
-      "potentialScore": 33,
+      "potentialScore": 34,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -84649,7 +84653,7 @@
       "firstOrder": "2026-04-14",
       "lastOrder": "2026-05-09",
       "ecShare": 1.0,
-      "potentialScore": 40,
+      "potentialScore": 36,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -84792,7 +84796,7 @@
       "firstOrder": "2026-07-14",
       "lastOrder": "2026-07-14",
       "ecShare": 0.0,
-      "potentialScore": 44,
+      "potentialScore": 47,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -84868,7 +84872,7 @@
       "firstOrder": "2026-01-22",
       "lastOrder": "2026-09-14",
       "ecShare": 1.0,
-      "potentialScore": 65,
+      "potentialScore": 62,
       "stickinessScore": 69,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -85300,7 +85304,7 @@
       "firstOrder": "2026-03-07",
       "lastOrder": "2026-08-07",
       "ecShare": 0.0413,
-      "potentialScore": 86,
+      "potentialScore": 88,
       "stickinessScore": 72,
       "quadrant": "核心采购用户",
       "status": "低活跃",
@@ -85613,7 +85617,7 @@
       "firstOrder": "2026-04-29",
       "lastOrder": "2026-04-29",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 24,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -85901,7 +85905,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 18,
+      "potentialScore": 17,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -85978,7 +85982,7 @@
       "firstOrder": "2026-07-13",
       "lastOrder": "2026-09-15",
       "ecShare": 1.0,
-      "potentialScore": 64,
+      "potentialScore": 63,
       "stickinessScore": 64,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -86260,7 +86264,7 @@
       "firstOrder": "2026-09-01",
       "lastOrder": "2026-09-01",
       "ecShare": 1.0,
-      "potentialScore": 47,
+      "potentialScore": 46,
       "stickinessScore": 37,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -86398,7 +86402,7 @@
       "firstOrder": "2026-06-23",
       "lastOrder": "2026-07-22",
       "ecShare": 1.0,
-      "potentialScore": 54,
+      "potentialScore": 53,
       "stickinessScore": 45,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -86521,7 +86525,7 @@
       "firstOrder": "2026-07-16",
       "lastOrder": "2026-08-03",
       "ecShare": 1.0,
-      "potentialScore": 44,
+      "potentialScore": 43,
       "stickinessScore": 53,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -86883,7 +86887,7 @@
       "firstOrder": "2026-05-08",
       "lastOrder": "2026-05-08",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 28,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -87069,7 +87073,7 @@
       "firstOrder": "2026-06-08",
       "lastOrder": "2026-06-08",
       "ecShare": 1.0,
-      "potentialScore": 31,
+      "potentialScore": 32,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -87146,7 +87150,7 @@
       "firstOrder": "2026-07-03",
       "lastOrder": "2026-09-21",
       "ecShare": 0.1182,
-      "potentialScore": 85,
+      "potentialScore": 84,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -87940,7 +87944,7 @@
       "firstOrder": "2026-06-05",
       "lastOrder": "2026-07-02",
       "ecShare": 0.2967,
-      "potentialScore": 75,
+      "potentialScore": 74,
       "stickinessScore": 38,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -88183,7 +88187,7 @@
       "firstOrder": "2026-07-20",
       "lastOrder": "2026-07-20",
       "ecShare": 0.0,
-      "potentialScore": 47,
+      "potentialScore": 49,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -88903,7 +88907,7 @@
       "firstOrder": "2026-05-27",
       "lastOrder": "2026-09-21",
       "ecShare": 0.0054,
-      "potentialScore": 96,
+      "potentialScore": 95,
       "stickinessScore": 78,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -90328,7 +90332,7 @@
       "firstOrder": "2026-06-05",
       "lastOrder": "2026-09-15",
       "ecShare": 0.5144,
-      "potentialScore": 77,
+      "potentialScore": 75,
       "stickinessScore": 56,
       "quadrant": "核心采购用户",
       "status": "低活跃",
@@ -91371,7 +91375,7 @@
       "firstOrder": "2026-06-09",
       "lastOrder": "2026-09-11",
       "ecShare": 0.1054,
-      "potentialScore": 89,
+      "potentialScore": 88,
       "stickinessScore": 53,
       "quadrant": "核心采购用户",
       "status": "沉默",
@@ -92183,7 +92187,7 @@
       "firstOrder": "2026-06-25",
       "lastOrder": "2026-09-03",
       "ecShare": 1.0,
-      "potentialScore": 70,
+      "potentialScore": 69,
       "stickinessScore": 43,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -92196,7 +92200,6 @@
       "amt3m": 3862.16,
       "amt12m": 3862.16,
       "tags": [
-        "高潜力",
         "无明显规律",
         "快速增长",
         "周期严重偏离"
@@ -92742,7 +92745,7 @@
       "firstOrder": "2026-09-21",
       "lastOrder": "2026-09-21",
       "ecShare": 1.0,
-      "potentialScore": 26,
+      "potentialScore": 27,
       "stickinessScore": 60,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -92825,7 +92828,7 @@
       "firstOrder": "2026-09-10",
       "lastOrder": "2026-09-10",
       "ecShare": 1.0,
-      "potentialScore": 51,
+      "potentialScore": 55,
       "stickinessScore": 56,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -92907,7 +92910,7 @@
       "firstOrder": "2026-06-15",
       "lastOrder": "2026-07-08",
       "ecShare": 1.0,
-      "potentialScore": 33,
+      "potentialScore": 31,
       "stickinessScore": 52,
       "quadrant": "稳定型用户",
       "status": "沉默",
@@ -93005,7 +93008,7 @@
       "firstOrder": "2026-06-16",
       "lastOrder": "2026-06-16",
       "ecShare": 1.0,
-      "potentialScore": 19,
+      "potentialScore": 18,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -93082,7 +93085,7 @@
       "firstOrder": "2026-04-01",
       "lastOrder": "2026-04-01",
       "ecShare": 1.0,
-      "potentialScore": 16,
+      "potentialScore": 15,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -93159,7 +93162,7 @@
       "firstOrder": "2026-09-07",
       "lastOrder": "2026-09-07",
       "ecShare": 0.0,
-      "potentialScore": 53,
+      "potentialScore": 57,
       "stickinessScore": 55,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -93241,7 +93244,7 @@
       "firstOrder": "2026-09-09",
       "lastOrder": "2026-09-17",
       "ecShare": 0.0,
-      "potentialScore": 83,
+      "potentialScore": 85,
       "stickinessScore": 41,
       "quadrant": "潜力待激活",
       "status": "活跃",
@@ -93359,7 +93362,7 @@
       "firstOrder": "2026-08-26",
       "lastOrder": "2026-08-26",
       "ecShare": 0.0,
-      "potentialScore": 59,
+      "potentialScore": 63,
       "stickinessScore": 52,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -93441,7 +93444,7 @@
       "firstOrder": "2026-08-26",
       "lastOrder": "2026-08-26",
       "ecShare": 0.0,
-      "potentialScore": 52,
+      "potentialScore": 56,
       "stickinessScore": 52,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -93523,7 +93526,7 @@
       "firstOrder": "2026-07-23",
       "lastOrder": "2026-07-23",
       "ecShare": 0.0,
-      "potentialScore": 54,
+      "potentialScore": 57,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -93599,7 +93602,7 @@
       "firstOrder": "2026-09-15",
       "lastOrder": "2026-09-15",
       "ecShare": 0.0,
-      "potentialScore": 52,
+      "potentialScore": 56,
       "stickinessScore": 58,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -93681,7 +93684,7 @@
       "firstOrder": "2026-08-18",
       "lastOrder": "2026-08-18",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 28,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "正常",
@@ -93764,9 +93767,9 @@
       "firstOrder": "2026-06-29",
       "lastOrder": "2026-06-29",
       "ecShare": 1.0,
-      "potentialScore": 48,
+      "potentialScore": 50,
       "stickinessScore": 46,
-      "quadrant": "普通用户",
+      "quadrant": "潜力待激活",
       "status": "低活跃",
       "regularity": "无明显规律",
       "avgCycleDays": 84.0,
@@ -93846,7 +93849,7 @@
       "firstOrder": "2026-05-20",
       "lastOrder": "2026-05-20",
       "ecShare": 1.0,
-      "potentialScore": 27,
+      "potentialScore": 25,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -93970,7 +93973,7 @@
       "firstOrder": "2026-05-14",
       "lastOrder": "2026-09-08",
       "ecShare": 0.544,
-      "potentialScore": 74,
+      "potentialScore": 73,
       "stickinessScore": 70,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -94264,7 +94267,7 @@
       "firstOrder": "2026-05-22",
       "lastOrder": "2026-09-10",
       "ecShare": 0.0,
-      "potentialScore": 77,
+      "potentialScore": 76,
       "stickinessScore": 69,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -94754,7 +94757,7 @@
       "firstOrder": "2026-07-15",
       "lastOrder": "2026-07-15",
       "ecShare": 0.8708,
-      "potentialScore": 59,
+      "potentialScore": 57,
       "stickinessScore": 34,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -94983,7 +94986,7 @@
       "firstOrder": "2026-06-11",
       "lastOrder": "2026-09-10",
       "ecShare": 0.9581,
-      "potentialScore": 72,
+      "potentialScore": 70,
       "stickinessScore": 47,
       "quadrant": "潜力待激活",
       "status": "回流",
@@ -95491,7 +95494,7 @@
       "firstOrder": "2026-06-23",
       "lastOrder": "2026-09-16",
       "ecShare": 0.0983,
-      "potentialScore": 67,
+      "potentialScore": 66,
       "stickinessScore": 66,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -96145,7 +96148,7 @@
       "firstOrder": "2026-08-21",
       "lastOrder": "2026-08-21",
       "ecShare": 1.0,
-      "potentialScore": 41,
+      "potentialScore": 43,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "正常",
@@ -96227,7 +96230,7 @@
       "firstOrder": "2026-05-26",
       "lastOrder": "2026-09-21",
       "ecShare": 0.4553,
-      "potentialScore": 82,
+      "potentialScore": 81,
       "stickinessScore": 76,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -97245,7 +97248,7 @@
       "firstOrder": "2026-09-03",
       "lastOrder": "2026-09-03",
       "ecShare": 0.0,
-      "potentialScore": 47,
+      "potentialScore": 49,
       "stickinessScore": 54,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -97520,7 +97523,7 @@
       "firstOrder": "2026-08-28",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0283,
-      "potentialScore": 70,
+      "potentialScore": 72,
       "stickinessScore": 67,
       "quadrant": "核心采购用户",
       "status": "活跃",
@@ -97663,7 +97666,7 @@
       "firstOrder": "2026-09-15",
       "lastOrder": "2026-09-15",
       "ecShare": 0.0,
-      "potentialScore": 42,
+      "potentialScore": 44,
       "stickinessScore": 58,
       "quadrant": "稳定型用户",
       "status": "活跃",
@@ -98618,7 +98621,7 @@
       "firstOrder": "2026-07-24",
       "lastOrder": "2026-07-24",
       "ecShare": 0.0,
-      "potentialScore": 70,
+      "potentialScore": 76,
       "stickinessScore": 46,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -98761,7 +98764,7 @@
       "firstOrder": "2026-06-26",
       "lastOrder": "2026-09-07",
       "ecShare": 0.0,
-      "potentialScore": 92,
+      "potentialScore": 91,
       "stickinessScore": 45,
       "quadrant": "潜力待激活",
       "status": "沉默",
@@ -99490,7 +99493,7 @@
       "firstOrder": "2026-05-29",
       "lastOrder": "2026-05-29",
       "ecShare": 1.0,
-      "potentialScore": 34,
+      "potentialScore": 31,
       "stickinessScore": 32,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -99599,7 +99602,7 @@
       "firstOrder": "2026-07-17",
       "lastOrder": "2026-07-17",
       "ecShare": 1.0,
-      "potentialScore": 45,
+      "potentialScore": 44,
       "stickinessScore": 34,
       "quadrant": "普通用户",
       "status": "沉默",
@@ -99722,7 +99725,7 @@
       "firstOrder": "2026-09-09",
       "lastOrder": "2026-09-09",
       "ecShare": 1.0,
-      "potentialScore": 63,
+      "potentialScore": 64,
       "stickinessScore": 39,
       "quadrant": "潜力待激活",
       "status": "低活跃",
@@ -99819,7 +99822,7 @@
       "firstOrder": "2025-09-21",
       "lastOrder": "2025-09-21",
       "ecShare": 1.0,
-      "potentialScore": 20,
+      "potentialScore": 19,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",
@@ -99895,7 +99898,7 @@
       "firstOrder": "2026-01-27",
       "lastOrder": "2026-08-21",
       "ecShare": 0.1915,
-      "potentialScore": 76,
+      "potentialScore": 77,
       "stickinessScore": 76,
       "quadrant": "核心采购用户",
       "status": "正常",
@@ -100203,7 +100206,7 @@
       "firstOrder": "2026-06-30",
       "lastOrder": "2026-09-20",
       "ecShare": 0.0,
-      "potentialScore": 69,
+      "potentialScore": 70,
       "stickinessScore": 73,
       "quadrant": "核心采购用户",
       "status": "回流",
@@ -100216,6 +100219,7 @@
       "amt3m": 7027.0,
       "amt12m": 7027.0,
       "tags": [
+        "高潜力",
         "高粘性",
         "较规律",
         "快速增长"
@@ -100435,7 +100439,7 @@
       "firstOrder": "2026-05-18",
       "lastOrder": "2026-05-18",
       "ecShare": 1.0,
-      "potentialScore": 15,
+      "potentialScore": 14,
       "stickinessScore": 46,
       "quadrant": "普通用户",
       "status": "低活跃",

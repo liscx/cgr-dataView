@@ -167,7 +167,11 @@ p1 = rank_scores([b['amt_12m'] for b in b_list])
 p2 = rank_scores([b['amt_3m'] for b in b_list])
 p3 = rank_scores([b['order_cnt'] for b in b_list])
 p4 = rank_scores([b['growth_3m'] for b in b_list])
-p5 = rank_scores([b['cat_count'] for b in b_list])
+
+# 潜力分权重：近12月金额 / 近3月金额 / 采购频次 / 近3月金额增长率
+# （已移除原「品类丰富度 10%」，剩余四项按原相对比例归一到合计 100%）
+P_WEIGHTS = (0.30, 0.25, 0.20, 0.15)
+P_WEIGHT_SUM = sum(P_WEIGHTS)
 
 s1 = rank_scores([b['tenure_days'] for b in b_list])
 s2 = rank_scores([b['active_months'] for b in b_list])
@@ -192,7 +196,9 @@ for i, b in enumerate(b_list):
     g = b['g']
 
     # 潜力得分 & 粘性得分 (0 - 100)
-    potential_score = int(round(0.30*p1[i] + 0.25*p2[i] + 0.20*p3[i] + 0.15*p4[i] + 0.10*p5[i]))
+    potential_score = int(round(
+        (P_WEIGHTS[0]*p1[i] + P_WEIGHTS[1]*p2[i] + P_WEIGHTS[2]*p3[i] + P_WEIGHTS[3]*p4[i]) / P_WEIGHT_SUM
+    ))
     stickiness_score = int(round(0.20*s1[i] + 0.25*s2[i] + 0.25*s3[i] + 0.30*s4[i]))
 
     # 四象限归类
